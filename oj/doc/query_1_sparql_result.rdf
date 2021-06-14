@@ -1,0 +1,292 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="http://publications.europa.eu/ontology/cdm#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:j.1="http://publications.europa.eu/ontology/annotation#"
+    xmlns:j.2="http://publications.europa.eu/ontology/cdm/cmr#" > 
+  <rdf:Description rdf:about="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_7">
+    <j.0:belongs_to rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:identifier>DOC_7</j.0:identifier>
+    <rdf:type rdf:resource="http://publications.europa.eu/ontology/cdm#item"/>
+    <j.0:item_belongs_to_manifestation rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:item_identifier>DOC_7</j.0:item_identifier>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/uriserv/OJ.L_.2013.347.01.0320.01.ENG.fmx4.L_2013347EN.01042801.xml"/>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG.fmx4.L_2013347EN.01042801.xml"/>
+    <j.2:manifestationMimeType>application/xml;type=fmx4</j.2:manifestationMimeType>
+    <j.2:metsStructSuperDiv rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG">
+    <rdf:type rdf:resource="http://publications.europa.eu/ontology/cdm#expression"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_6">
+    <j.0:belongs_to rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:identifier>DOC_6</j.0:identifier>
+    <rdf:type rdf:resource="http://publications.europa.eu/ontology/cdm#item"/>
+    <j.0:item_belongs_to_manifestation rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:item_identifier>DOC_6</j.0:item_identifier>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG.fmx4.L_2013347EN.01042601.xml"/>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/uriserv/OJ.L_.2013.347.01.0320.01.ENG.fmx4.L_2013347EN.01042601.xml"/>
+    <j.2:manifestationMimeType>application/xml;type=fmx4</j.2:manifestationMimeType>
+    <j.2:metsStructSuperDiv rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_5">
+    <j.0:belongs_to rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:identifier>DOC_5</j.0:identifier>
+    <rdf:type rdf:resource="http://publications.europa.eu/ontology/cdm#item"/>
+    <j.0:item_belongs_to_manifestation rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:item_identifier>DOC_5</j.0:item_identifier>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG.fmx4.L_2013347EN.01042401.xml"/>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/uriserv/OJ.L_.2013.347.01.0320.01.ENG.fmx4.L_2013347EN.01042401.xml"/>
+    <j.2:manifestationMimeType>application/xml;type=fmx4</j.2:manifestationMimeType>
+    <j.2:metsStructSuperDiv rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02">
+    <j.0:manifestation_has_item rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_4"/>
+    <j.0:has rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_11"/>
+    <j.0:manifestation_has_item rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_2"/>
+    <j.0:has rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_9"/>
+    <j.0:manifestation_has_item rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_12"/>
+    <j.0:manifestation_has_item rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_7"/>
+    <j.0:manifestation_has_item rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_16"/>
+    <j.0:has rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_18"/>
+    <j.0:has rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_14"/>
+    <j.0:has rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_6"/>
+    <rdf:type rdf:resource="http://publications.europa.eu/ontology/cdm#manifestation"/>
+    <j.0:has rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_2"/>
+    <j.0:has rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_17"/>
+    <j.0:has rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_5"/>
+    <j.0:manifestation_has_item rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_9"/>
+    <j.2:lastModificationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-01-16T06:56:23.183+01:00</j.2:lastModificationDate>
+    <j.2:metsStructSuperDiv rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006"/>
+    <j.0:has rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_10"/>
+    <j.0:has rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_8"/>
+    <j.0:manifestation_has_item rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_11"/>
+    <j.0:manifestation_has_item rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_6"/>
+    <j.0:manifestation_has_item rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_17"/>
+    <j.0:manifestation_has_item rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_15"/>
+    <j.0:manifestation_has_item rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_10"/>
+    <j.0:manifestation_has_item rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_14"/>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG.fmx4"/>
+    <j.0:has rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_16"/>
+    <j.0:has rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_4"/>
+    <j.0:manifestation_has_item rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_13"/>
+    <j.0:manifestation_has_item rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_8"/>
+    <j.0:has rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_13"/>
+    <j.0:manifestation_has_item rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_5"/>
+    <j.0:manifestation_has_item rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_3"/>
+    <j.0:has rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_1"/>
+    <j.0:has rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_20"/>
+    <j.0:manifestation_has_item rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_20"/>
+    <j.0:has rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_12"/>
+    <j.0:has rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_19"/>
+    <j.0:manifestation_has_item rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_19"/>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/uriserv/OJ.L_.2013.347.01.0320.01.ENG.fmx4"/>
+    <j.0:has rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_15"/>
+    <j.0:manifestation_has_item rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_1"/>
+    <j.0:has rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_7"/>
+    <j.0:manifestation_has_item rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_18"/>
+    <j.0:has rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_4">
+    <j.0:belongs_to rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:identifier>DOC_4</j.0:identifier>
+    <rdf:type rdf:resource="http://publications.europa.eu/ontology/cdm#item"/>
+    <j.0:item_belongs_to_manifestation rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:item_identifier>DOC_4</j.0:item_identifier>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/uriserv/OJ.L_.2013.347.01.0320.01.ENG.fmx4.L_2013347EN.01042301.xml"/>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG.fmx4.L_2013347EN.01042301.xml"/>
+    <j.2:manifestationMimeType>application/xml;type=fmx4</j.2:manifestationMimeType>
+    <j.2:metsStructSuperDiv rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_3">
+    <j.0:belongs_to rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:identifier>DOC_3</j.0:identifier>
+    <rdf:type rdf:resource="http://publications.europa.eu/ontology/cdm#item"/>
+    <j.0:item_belongs_to_manifestation rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:item_identifier>DOC_3</j.0:item_identifier>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG.fmx4.L_2013347EN.01041201.xml"/>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/uriserv/OJ.L_.2013.347.01.0320.01.ENG.fmx4.L_2013347EN.01041201.xml"/>
+    <j.2:manifestationMimeType>application/xml;type=fmx4</j.2:manifestationMimeType>
+    <j.2:metsStructSuperDiv rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_2">
+    <j.0:belongs_to rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:identifier>DOC_2</j.0:identifier>
+    <rdf:type rdf:resource="http://publications.europa.eu/ontology/cdm#item"/>
+    <j.0:item_belongs_to_manifestation rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:item_identifier>DOC_2</j.0:item_identifier>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/uriserv/OJ.L_.2013.347.01.0320.01.ENG.fmx4.L_2013347EN.01032001.xml"/>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG.fmx4.L_2013347EN.01032001.xml"/>
+    <j.2:manifestationMimeType>application/xml;type=fmx4</j.2:manifestationMimeType>
+    <j.2:metsStructSuperDiv rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_1">
+    <j.0:belongs_to rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:identifier>DOC_1</j.0:identifier>
+    <rdf:type rdf:resource="http://publications.europa.eu/ontology/cdm#item"/>
+    <j.0:item_belongs_to_manifestation rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:item_identifier>DOC_1</j.0:item_identifier>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG.fmx4.L_2013347EN.01032001.doc.xml"/>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/uriserv/OJ.L_.2013.347.01.0320.01.ENG.fmx4.L_2013347EN.01032001.doc.xml"/>
+    <j.2:manifestationMimeType>application/xml;type=fmx4</j.2:manifestationMimeType>
+    <j.2:metsStructSuperDiv rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_19">
+    <j.0:identifier>DOC_19</j.0:identifier>
+    <j.0:belongs_to rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <rdf:type rdf:resource="http://publications.europa.eu/ontology/cdm#item"/>
+    <j.0:item_belongs_to_manifestation rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:item_identifier>DOC_19</j.0:item_identifier>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG.fmx4.L_2013347EN.01046801.xml"/>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/uriserv/OJ.L_.2013.347.01.0320.01.ENG.fmx4.L_2013347EN.01046801.xml"/>
+    <j.2:manifestationMimeType>application/xml;type=fmx4</j.2:manifestationMimeType>
+    <j.2:metsStructSuperDiv rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_17">
+    <j.0:identifier>DOC_17</j.0:identifier>
+    <j.0:belongs_to rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <rdf:type rdf:resource="http://publications.europa.eu/ontology/cdm#item"/>
+    <j.0:item_belongs_to_manifestation rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:item_identifier>DOC_17</j.0:item_identifier>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/uriserv/OJ.L_.2013.347.01.0320.01.ENG.fmx4.L_2013347EN.01046601.xml"/>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG.fmx4.L_2013347EN.01046601.xml"/>
+    <j.2:manifestationMimeType>application/xml;type=fmx4</j.2:manifestationMimeType>
+    <j.2:metsStructSuperDiv rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG.fmx4">
+    <j.0:source-pool rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ceres</j.0:source-pool>
+    <j.0:manifests rdf:resource="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG"/>
+    <j.0:type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fmx4</j.0:type>
+    <j.0:manifestation_manifests_expression rdf:resource="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG"/>
+    <j.0:manifestation_source-pool rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ceres</j.0:manifestation_source-pool>
+    <j.0:manifestation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fmx4</j.0:manifestation_type>
+    <j.1:build_info>cdm:CDM_2.1.7  tdm:1523  xslt:3945 saxon:9.0.0.1J JVM:1.6.0_29 metaconvJar:1.1.9 builddate:23/12/2013 15:59:26</j.1:build_info>
+    <rdf:type rdf:resource="http://publications.europa.eu/ontology/cdm#manifestation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_18">
+    <j.0:identifier>DOC_18</j.0:identifier>
+    <j.0:belongs_to rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <rdf:type rdf:resource="http://publications.europa.eu/ontology/cdm#item"/>
+    <j.0:item_belongs_to_manifestation rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:item_identifier>DOC_18</j.0:item_identifier>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/uriserv/OJ.L_.2013.347.01.0320.01.ENG.fmx4.L_2013347EN.01046701.xml"/>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG.fmx4.L_2013347EN.01046701.xml"/>
+    <j.2:manifestationMimeType>application/xml;type=fmx4</j.2:manifestationMimeType>
+    <j.2:metsStructSuperDiv rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_15">
+    <j.0:identifier>DOC_15</j.0:identifier>
+    <j.0:belongs_to rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <rdf:type rdf:resource="http://publications.europa.eu/ontology/cdm#item"/>
+    <j.0:item_belongs_to_manifestation rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:item_identifier>DOC_15</j.0:item_identifier>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG.fmx4.L_2013347EN.01046101.xml"/>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/uriserv/OJ.L_.2013.347.01.0320.01.ENG.fmx4.L_2013347EN.01046101.xml"/>
+    <j.2:manifestationMimeType>application/xml;type=fmx4</j.2:manifestationMimeType>
+    <j.2:metsStructSuperDiv rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_16">
+    <j.0:identifier>DOC_16</j.0:identifier>
+    <j.0:belongs_to rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <rdf:type rdf:resource="http://publications.europa.eu/ontology/cdm#item"/>
+    <j.0:item_belongs_to_manifestation rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:item_identifier>DOC_16</j.0:item_identifier>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG.fmx4.L_2013347EN.01046301.xml"/>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/uriserv/OJ.L_.2013.347.01.0320.01.ENG.fmx4.L_2013347EN.01046301.xml"/>
+    <j.2:manifestationMimeType>application/xml;type=fmx4</j.2:manifestationMimeType>
+    <j.2:metsStructSuperDiv rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_13">
+    <j.0:identifier>DOC_13</j.0:identifier>
+    <j.0:belongs_to rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <rdf:type rdf:resource="http://publications.europa.eu/ontology/cdm#item"/>
+    <j.0:item_belongs_to_manifestation rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:item_identifier>DOC_13</j.0:item_identifier>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/uriserv/OJ.L_.2013.347.01.0320.01.ENG.fmx4.L_2013347EN.01043801.xml"/>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG.fmx4.L_2013347EN.01043801.xml"/>
+    <j.2:manifestationMimeType>application/xml;type=fmx4</j.2:manifestationMimeType>
+    <j.2:metsStructSuperDiv rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006">
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/uriserv/OJ.L_.2013.347.01.0320.01.ENG"/>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/celex/32013R1303.ENG"/>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_14">
+    <j.0:identifier>DOC_14</j.0:identifier>
+    <j.0:belongs_to rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <rdf:type rdf:resource="http://publications.europa.eu/ontology/cdm#item"/>
+    <j.0:item_belongs_to_manifestation rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:item_identifier>DOC_14</j.0:item_identifier>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/uriserv/OJ.L_.2013.347.01.0320.01.ENG.fmx4.L_2013347EN.01045701.xml"/>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG.fmx4.L_2013347EN.01045701.xml"/>
+    <j.2:manifestationMimeType>application/xml;type=fmx4</j.2:manifestationMimeType>
+    <j.2:metsStructSuperDiv rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_11">
+    <j.0:identifier>DOC_11</j.0:identifier>
+    <j.0:belongs_to rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <rdf:type rdf:resource="http://publications.europa.eu/ontology/cdm#item"/>
+    <j.0:item_belongs_to_manifestation rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:item_identifier>DOC_11</j.0:item_identifier>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/uriserv/OJ.L_.2013.347.01.0320.01.ENG.fmx4.L_2013347EN.01043501.xml"/>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG.fmx4.L_2013347EN.01043501.xml"/>
+    <j.2:manifestationMimeType>application/xml;type=fmx4</j.2:manifestationMimeType>
+    <j.2:metsStructSuperDiv rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_12">
+    <j.0:identifier>DOC_12</j.0:identifier>
+    <j.0:belongs_to rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <rdf:type rdf:resource="http://publications.europa.eu/ontology/cdm#item"/>
+    <j.0:item_belongs_to_manifestation rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:item_identifier>DOC_12</j.0:item_identifier>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/uriserv/OJ.L_.2013.347.01.0320.01.ENG.fmx4.L_2013347EN.01043601.xml"/>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG.fmx4.L_2013347EN.01043601.xml"/>
+    <j.2:manifestationMimeType>application/xml;type=fmx4</j.2:manifestationMimeType>
+    <j.2:metsStructSuperDiv rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_20">
+    <j.0:identifier>DOC_20</j.0:identifier>
+    <j.0:belongs_to rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <rdf:type rdf:resource="http://publications.europa.eu/ontology/cdm#item"/>
+    <j.0:item_belongs_to_manifestation rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:item_identifier>DOC_20</j.0:item_identifier>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG.fmx4.L_2013347EN.01046901.xml"/>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/uriserv/OJ.L_.2013.347.01.0320.01.ENG.fmx4.L_2013347EN.01046901.xml"/>
+    <j.2:manifestationMimeType>application/xml;type=fmx4</j.2:manifestationMimeType>
+    <j.2:metsStructSuperDiv rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_10">
+    <j.0:identifier>DOC_10</j.0:identifier>
+    <j.0:belongs_to rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <rdf:type rdf:resource="http://publications.europa.eu/ontology/cdm#item"/>
+    <j.0:item_belongs_to_manifestation rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:item_identifier>DOC_10</j.0:item_identifier>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG.fmx4.L_2013347EN.01043401.xml"/>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/uriserv/OJ.L_.2013.347.01.0320.01.ENG.fmx4.L_2013347EN.01043401.xml"/>
+    <j.2:manifestationMimeType>application/xml;type=fmx4</j.2:manifestationMimeType>
+    <j.2:metsStructSuperDiv rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_9">
+    <j.0:belongs_to rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:identifier>DOC_9</j.0:identifier>
+    <rdf:type rdf:resource="http://publications.europa.eu/ontology/cdm#item"/>
+    <j.0:item_belongs_to_manifestation rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:item_identifier>DOC_9</j.0:item_identifier>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG.fmx4.L_2013347EN.01043001.xml"/>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/uriserv/OJ.L_.2013.347.01.0320.01.ENG.fmx4.L_2013347EN.01043001.xml"/>
+    <j.2:manifestationMimeType>application/xml;type=fmx4</j.2:manifestationMimeType>
+    <j.2:metsStructSuperDiv rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_8">
+    <j.0:belongs_to rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:identifier>DOC_8</j.0:identifier>
+    <rdf:type rdf:resource="http://publications.europa.eu/ontology/cdm#item"/>
+    <j.0:item_belongs_to_manifestation rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+    <j.0:item_identifier>DOC_8</j.0:item_identifier>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/oj/JOL_2013_347_R_0320_01.ENG.fmx4.L_2013347EN.01042901.xml"/>
+    <owl:sameAs rdf:resource="http://publications.europa.eu/resource/uriserv/OJ.L_.2013.347.01.0320.01.ENG.fmx4.L_2013347EN.01042901.xml"/>
+    <j.2:manifestationMimeType>application/xml;type=fmx4</j.2:manifestationMimeType>
+    <j.2:metsStructSuperDiv rdf:resource="http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"/>
+  </rdf:Description>
+</rdf:RDF>

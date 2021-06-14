@@ -37,11 +37,12 @@ public class OJDocumentProviderImpl implements OJDocumentProvider {
     @Override
     public String getFormexDocument(String type, int year, int number) {
         try {
-            final String urlDocument = getOJFormexDocumentUrl(type, year, number);
+            String urlDocument = getOJFormexDocumentUrl(type, year, number);
             LOG.trace("OJFormexDocumentUrl: " + urlDocument);
             String formexDocument = null;
-            if(urlDocument!=null){
-                formexDocument = getOJFormexDocumentByUrl(urlDocument);
+            if (urlDocument != null) {
+                urlDocument = urlDocument + DOC_TYPE;
+                formexDocument = restTemplate.getForObject(urlDocument, String.class);
             }
             LOG.trace("FormexDocument: \n" + formexDocument);
             return formexDocument;
@@ -112,10 +113,4 @@ public class OJDocumentProviderImpl implements OJDocumentProvider {
         return uriDocument;
     }
 
-    private String getOJFormexDocumentByUrl(String uriDocument) {
-        uriDocument = uriDocument + DOC_TYPE;
-        LOG.debug("OJ Formex document url: " + uriDocument);
-        String formexDocument = restTemplate.getForObject(uriDocument, String.class);
-        return formexDocument;
-    }
 }
