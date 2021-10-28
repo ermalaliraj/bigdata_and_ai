@@ -1,0 +1,15 @@
+Random starting synaptic weights:
+[-0.16595599]
+[ 0.44064899]
+[-0.99977125]
+
+Synaptic weights after training:
+[ 9.67299303]
+[-0.2078435 ]
+[-4.62963669]
+
+Output after training:
+[0.00966449]
+[0.99211957]
+[0.99358898]
+[0.00786506]
