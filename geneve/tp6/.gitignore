@@ -1,0 +1,11 @@
+*.pyc
+
+resource/unittest/pipelines_test_resources/
+
+.Python
+.coverage
+
+.tox/
+
+*.egg/
+src/dissect.egg-info/

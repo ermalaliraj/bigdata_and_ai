@@ -1,0 +1,1 @@
+getHypernymsEsi.py cat 10

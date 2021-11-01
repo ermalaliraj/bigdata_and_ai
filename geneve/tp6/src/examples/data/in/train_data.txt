@@ -1,0 +1,2 @@
+book_function car my_car_book
+book_function book 2x_book
