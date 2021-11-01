@@ -1,5 +1,10 @@
 # Unigram Tagger ( TP3 - Question 1 > Third point)
 
+# Implement a simple gene tagger that always produces the tag y∗ = argmaxy e(x | y) for each word x.
+# Make sure the tagger uses the _RARE_ word probabilities for rare and unseen words.
+# The tagger should take the counts file (gene.key.counts) and the development dataset (gene.dev) as input,
+# and produce as output predictions (gene.dev.p1.out) in the same format as the training dataset.
+
 def tagger(fileGene, fileCounts):
     file_counts = open(fileCounts, "r")
     wordCount = {}  # {'BACKGROUND': {'NOGENE': '5'}, {'GENE': '0'}}, ...}
@@ -20,16 +25,16 @@ def tagger(fileGene, fileCounts):
             else:
                 tagCount[tag] += 1  # add the count of genes found to the totals for that tag
 
-    print(len(wordCount))
-    print(len(tagCount))
+    print("total WORDTAG's in file", fileGene, len(wordCount))
+    print("total NOGENE", tagCount['NOGENE'], "total GENE", tagCount['GENE'])
     file_counts.close()
 
     file_gene = open(fileGene, "r")
     file_output = open(fileGene + ".p1.out", "w+")
 
     for word in file_gene.readlines():
-        word = word.replace("\n", "") #remove the "new line" characters for simplifying ou
-        if(word == ""):
+        word = word.replace("\n", "")  # remove the "new line" characters
+        if (word == ""):
             # if empty row, copy as it is in the new file
             file_output.write(word + "\n")
         else:
@@ -41,8 +46,7 @@ def tagger(fileGene, fileCounts):
     file_gene.close()
 
 
-# calculates the emission for a specific word for both GNE and NOGENE tag and returnt
-# the highest
+# calculates the emission for a specific word for both GNE and NOGENE tag and return the highest
 def tag_word(word, wordCount, tagCount):
     if word not in wordCount:
         word = "_RARE_"

@@ -100,7 +100,7 @@ def usage():
     Wrong parameters. Run as
         - python countfreqs.py [input_file]   (or)
         - python countfreqs.py [input_file] > [output_file]
-        - python countfreqs.py gene.train > gene.counts
+        - python countfreqs.py ./doc/gene.train > ./doc/gene.train.counts
     Read in a gene tagged training input file and produce counts.
     """)
 

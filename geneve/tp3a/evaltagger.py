@@ -9,7 +9,7 @@ import sys
 Evaluate gene tagger output by comparing it to a gold standard file.
 
 Running the script on your tagger output like this
-    - python evaltagger.py ./doc/gene_dev.key ./doc/gene.dev.p1.out
+    - python evaltagger.py ./doc/gene.key ./doc/gene.dev.p1.out
 will generate a table of results like this:
 
     Found 1457 GENEs. Expected 642 GENEs; Correct: 497.
