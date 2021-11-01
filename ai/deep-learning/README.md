@@ -21,13 +21,15 @@ Neural network of 3 layers for recognizing the number drowned in an image of siz
 7. Verifies the prediction, printing the second element of the output, which is a "2". 
 
 ### Some data
-`x_test[1]`
+`x_test[1]` <br/>
 <img src="./doc/1.x_test[1]_number2.jpg" width="40%" height="auto">&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="./doc/2.x_test[1]_number2_normalized.jpg" width="50%" height="auto">  <br/>
 
 First row of the `prediction` matrix has the highest value in the column representing the value "2".<br/>
 <img src="./doc/3.predicted[1]_number2.jpg" width="50%" height="auto">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="./doc/0.number2.jpg" width="20%" height="auto"> 
+
+[Output Console](./doc/console.txt)
 
 ### Prerequisites
 - Python
