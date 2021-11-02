@@ -18,3 +18,7 @@
 /logs/
 /logs/*.log
 **/*.log
+
+
+
+__pycache__

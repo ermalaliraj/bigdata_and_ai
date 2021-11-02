@@ -21,7 +21,7 @@ Count n-gram frequencies in a data file and write counts to stdout.
 315457 2-GRAM NOGENE NOGENE
 15888 2-GRAM NOGENE GENE
 
-Run as: python countfreqs.py ./doc/gene.train > ./doc/gene.counts
+Run as: python countfreqs.py ./doc/gene.train > ./doc/gene.train.counts
 for having the output in a different file.
 """
 
@@ -93,6 +93,9 @@ def countNgrams(corpusFile, n, outputFile):
         for ngram in ngramCounts[i - 1]:
             ngramstr = " ".join(ngram)
             outputFile.write("{} {}-GRAM {}\n".format(ngramCounts[i - 1][ngram], i, ngramstr))
+
+    print("Wrote {0} emission rows, and {1} nGram rows in the file {2}".format(len(emissionCounts), len(ngramCounts), outputFile.name))
+
 
 
 def usage():

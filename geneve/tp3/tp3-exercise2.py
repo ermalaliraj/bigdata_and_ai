@@ -4,7 +4,7 @@
 # __y denotes y-2
 
 def compute_3gram_transition_parameters(y,_y,__y):
-    f= open("./doc/gene.counts","r")
+    f= open("./doc/gene.key.counts","r")
     ngram_counts = {}
     for x in f.readlines():
         if "WORDTAG" != x.split()[1]:
