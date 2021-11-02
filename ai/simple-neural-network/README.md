@@ -26,3 +26,5 @@ In the `simple_neural_net.py` the neural network is trained.<br/>
 - [Milo Spencer-Harber website - Simple Neural Network](https://medium.com/technology-invention-and-more/how-to-build-a-simple-neural-network-in-9-lines-of-python-code-cc8f23647ca1)
 - [Andrew Trask website - Basic Python Network](https://iamtrask.github.io/2015/07/12/basic-python-network/)
 
+- [Back to bigdata_and_ai](https://github.com/ermalaliraj/bigdata_and_ai)
+

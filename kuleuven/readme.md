@@ -46,4 +46,4 @@ https://opensource.com/resources/python/ides
 [!R programming] https://www.dummies.com/programming/big-data/data-science/basics-of-r-programming-for-predictive-analytics/
 https://stackoverflow.com/questions/50125472/issues-with-installing-python-libraries-on-windows-condahttperror-http-000-co
 
-r
+[Back to bigdata_and_ai](https://github.com/ermalaliraj/bigdata_and_ai)

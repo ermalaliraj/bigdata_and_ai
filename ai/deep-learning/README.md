@@ -50,3 +50,4 @@ pip install tf-nightly
 - [Full tutorial](https://pythonprogramming.net/introduction-deep-learning-python-tensorflow-keras/)
 - [TensorFlow Docs](https://www.tensorflow.org/api_docs/python/tf/all_symbols)
 - [Keras Docs](https://keras.io/api/layers/)
+- [Back to bigdata_and_ai](https://github.com/ermalaliraj/bigdata_and_ai)
