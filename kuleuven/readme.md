@@ -32,6 +32,11 @@ conda install -c r rpy2
 pip install rpy2 
 ```
 
+### Second round of installations
+```
+pip install --user scipy
+```
+
 
 ### Choose the IDE
 https://www.spyder-ide.org/
