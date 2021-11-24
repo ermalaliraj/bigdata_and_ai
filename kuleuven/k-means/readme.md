@@ -8,10 +8,9 @@ Unsupervised technique.
 2. Create a `KMeans` algorithm with 3 clusters
 3. Make a first prediction and split the data in 3 categories: 0, 1 and 2
     - Append this info as the last column inside the `DataFrame`. All columns: `Name`, `Age`, `Income`, `cluster` 
-4. Normalize the values in the range `[0,1]` for `Age` and `Income`
-5. Use again the `KMeans` algorithm to train the scale dataset
+4. Normalize the values in the scale of `[0,1]` for `Age` and `Income`
+5. Use again the `KMeans` algorithm to train the scaled dataset
 6. Make another prediction overriding the column `cluster`
-7. Plot the output
 7. Use `inertia_` parameter of KMeans which provides `Sum of squared error` and show the `Elbow` plot to find out which is the ideal number of clusters to be used
 
 __Clustering original data__ <br/>
