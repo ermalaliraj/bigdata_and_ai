@@ -27,5 +27,6 @@ __Sum of squared error - Ideal number of clusters 3__ <br/>
 
 # See
 - [Youtube Tutorial](https://www.youtube.com/watch?v=EItlUEPCIzM)
+- [Git Hub Tutorial](https://github.com/codebasics/py/blob/master/ML/13_kmeans/13_kmeans_tutorial.ipynb)
 - [Back to bigdata_and_ai](https://github.com/ermalaliraj/bigdata_and_ai)
 - [K Means wikipedia](https://en.wikipedia.org/wiki/K-means_clustering)
