@@ -1,34 +1,38 @@
-# Simple Linear regression
+# Home prices - Simple Linear regression
 
-Given the following home prices find out prices of homes whose area is: 3300 (300) m2.
+Given the following home prices find out prices of homes whose area is: 
+- 3300 square feet
+- 5000 square feet
 
-<img src="./doc/homepricetable.JPG" width="50%" height="auto">  <br/>
+<img src="./doc/1.homepricetable.JPG" width="20%" height="auto">  <br/>
 
-### How the algorithm works?
+### Linear regression approach
 
-Blue line best fits the data points.
-<img src="./doc/scatterplot.JPG" width="50%" height="auto">  <br/>
+Scatter plot with available prices and areas.<br/>
+(red points available points, blue line best fits the data points)<br/>
+<img src="./doc/2.scatterplot_linreg_bestFit.JPG" width="50%" height="auto">  <br/>
 
-We can deduce that a house of 3300 ft costs 628715
+We can deduce that a house of 3300 sf costs 628715 <br/>
+<img src="./doc/3.scatterplot_linreg_predict.JPG" width="50%" height="auto">  <br/>
 
-Calculate each error with the line, square and sum them up and try to minimise it until you find the optimal line.
+### How do we trace the line?
 
-<img src="./doc/different_lines.JPG" width="50%" height="auto">  <br/>
+Calculate each error with the line, square and sum them up and try to minimise it until you find the optimal line.<br/>
 
-Linear equation  <br/>
-<img src="./doc/linear_equation.png" width="50%" height="auto">  <br/>
+<img src="./doc/4.scatterplot_linreg_howBuildLine.JPG" width="45%" height="auto"> <img src="./doc/5.scatterplot_linreg_howBuildLine2.JPG" width="40%" height="auto">
+
+### Linear equation 
+
+<img src="./doc/6.linear_equation.png" width="60%" height="auto">
 
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-  
 ### Prerequisites
 - Python
+- scikit-learn library
 
 
 # See
 - [Youtube Tutorial](https://www.youtube.com/watch?v=8jazNUpO3lQ)
 - [Git Hub Tutorial](https://github.com/codebasics/py/tree/master/ML)
+- [scikit-learn](https://scikit-learn.org/stable/)
 - [Back to bigdata_and_ai](https://github.com/ermalaliraj/bigdata_and_ai)
