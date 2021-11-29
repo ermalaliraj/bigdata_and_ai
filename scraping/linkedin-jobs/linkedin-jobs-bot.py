@@ -11,10 +11,20 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 
+def check_dir(param):
+    return os.path.exists(param)
+
+def create_dir(param):
+    os.makedirs(param)
+
 class LinkedInBot:
     def __init__(self, delay=5):
-        if not os.path.exists("data"):
-            os.makedirs("data")
+        if check_dir("data"):
+            print("Directory exists")
+        else:
+            create_dir("data")
+            print("Directory created")
+
         log_fmt = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
         logging.basicConfig(level=logging.INFO, format=log_fmt, filename="data/linkedin-bot.log")
         self.delay = delay
