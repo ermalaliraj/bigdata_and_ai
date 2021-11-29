@@ -1,4 +1,4 @@
-# Home prices - Simple Linear regression
+# Machine Learning - Linear regression Single Variable
 
 Given the following home prices find out prices of homes whose area is: 
 - 3300 square feet
