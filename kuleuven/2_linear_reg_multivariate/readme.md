@@ -1,8 +1,8 @@
 # Machine Learning - Linear regression Multiple Variables (Multivariate Regression)
 
 Given the following home prices find out prices of homes whose area is: 
-- 3300 square feet
-- 5000 square feet
+- 3000 square feet area, 3 bedrooms, 40 year old
+- 5000 square feet area, 4 bedrooms, 5 year old
 
 <img src="./doc/1.homepricetable.JPG" width="20%" height="auto">  <br/>
 
