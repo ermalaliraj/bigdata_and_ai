@@ -1,0 +1,84 @@
+df:
+                 Car Model  Mileage  Sell Price($)  Age(yrs)
+0                  BMW X5    69000          18000         6
+1                  BMW X5    35000          34000         3
+2                  BMW X5    57000          26100         5
+3                  BMW X5    22500          40000         2
+4                  BMW X5    46000          31500         4
+5                 Audi A5    59000          29400         5
+6                 Audi A5    52000          32000         5
+7                 Audi A5    72000          19300         6
+8                 Audi A5    91000          12000         8
+9   Mercedez Benz C class    67000          22000         6
+10  Mercedez Benz C class    83000          20000         7
+11  Mercedez Benz C class    79000          21000         7
+12  Mercedez Benz C class    59000          33000         5
+
+Car Model dummies:
+     Audi A5  BMW X5  Mercedez Benz C class
+0         0       1                      0
+1         0       1                      0
+2         0       1                      0
+3         0       1                      0
+4         0       1                      0
+5         1       0                      0
+6         1       0                      0
+7         1       0                      0
+8         1       0                      0
+9         0       0                      1
+10        0       0                      1
+11        0       0                      1
+12        0       0                      1
+
+final df with dummies:
+     Mileage  Sell Price($)  Age(yrs)  Audi A5  BMW X5
+0     69000          18000         6        0       1
+1     35000          34000         3        0       1
+2     57000          26100         5        0       1
+3     22500          40000         2        0       1
+4     46000          31500         4        0       1
+5     59000          29400         5        1       0
+6     52000          32000         5        1       0
+7     72000          19300         6        1       0
+8     91000          12000         8        1       0
+9     67000          22000         6        0       0
+10    83000          20000         7        0       0
+11    79000          21000         7        0       0
+12    59000          33000         5        0       0
+
+X:
+     Mileage  Age(yrs)  Audi A5  BMW X5
+0     69000         6        0       1
+1     35000         3        0       1
+2     57000         5        0       1
+3     22500         2        0       1
+4     46000         4        0       1
+5     59000         5        1       0
+6     52000         5        1       0
+7     72000         6        1       0
+8     91000         8        1       0
+9     67000         6        0       0
+10    83000         7        0       0
+11    79000         7        0       0
+12    59000         5        0       0
+
+y:
+ 0     18000
+1     34000
+2     26100
+3     40000
+4     31500
+5     29400
+6     32000
+7     19300
+8     12000
+9     22000
+10    20000
+11    21000
+12    33000
+Name: Sell Price($), dtype: int64
+
+score : 0.9417050937281082
+Predict price of a Mercedez benz that is 4 yr old mileage 45000: [36991.31721061]
+Predict price of a BMW X5 benz that is 7 yr old mileage 86000: [11080.74313219]
+

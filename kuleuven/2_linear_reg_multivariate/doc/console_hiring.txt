@@ -1,0 +1,35 @@
+df:
+   experience  test_score(out of 10)  interview_score(out of 10)  salary($)
+0        NaN                    8.0                           9      50000
+1        NaN                    8.0                           6      45000
+2       five                    6.0                           7      60000
+3        two                   10.0                          10      65000
+4      seven                    9.0                           6      70000
+5      three                    7.0                          10      62000
+6        ten                    NaN                           7      72000
+7     eleven                    7.0                           8      80000
+
+df handled NA values, normalised to integers:
+    experience  test_score(out of 10)  interview_score(out of 10)  salary($)
+0           0                    8.0                           9      50000
+1           0                    8.0                           6      45000
+2           5                    6.0                           7      60000
+3           2                   10.0                          10      65000
+4           7                    9.0                           6      70000
+5           3                    7.0                          10      62000
+6          10                    8.0                           7      72000
+7          11                    7.0                           8      80000
+
+Coefficients: [2812.95487627 1845.70596798 2205.24017467]
+Intercept: 17737.263464337688
+
+predict 2 years of experience, 9 test scores, 6 interview scores:  [53205.96797671]
+predictCheck (reg.coef_[0] * 2 + reg.coef_[1] * 9 + reg.coef_[2] * 6 + reg.intercept_):  53205.96797671033
+
+predict 12 years of experience, 10 test scores, 10 interview scores:  [92002.18340611]
+predict 0 years of experience, 10 test scores, 10 interview scores:  [58246.72489083]
+predict 1  years of experience, 9  test scores, 6  interview scores:  [50393.01310044]
+predict 10 years of experience, 9  test scores, 6  interview scores:  [75709.6069869]
+predict 0  years of experience, 0  test scores, 0  interview scores:  [17737.26346434]
+predict 5  years of experience, 0  test scores, 0  interview scores:  [31802.03784571]
+predict 10 years of experience, 0  test scores, 0  interview scores:  [45866.81222707]
