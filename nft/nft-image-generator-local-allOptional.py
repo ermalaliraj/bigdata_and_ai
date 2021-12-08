@@ -28,7 +28,7 @@ def method_name(initialFile, additionFile):
         additionalLayer = Image.open(additionFile, "r")
         initialFile.alpha_composite(additionalLayer)
     except:
-        print("First payer is mandatory! {} occurred! {}".format(sys.exc_info()[0], sys.exc_info()[1]))
+        print("{} occurred! {}".format(sys.exc_info()[0], sys.exc_info()[1]))
 
 
 for n in total_images:
@@ -36,7 +36,7 @@ for n in total_images:
     try:
         bg = Image.open(path_background + "background_{}.png".format(n), "r")
     except:
-        print("\n{} occurred! {}".format(sys.exc_info()[0], sys.exc_info()[1]))
+        print("First payer is mandatory! {} occurred! {}".format(sys.exc_info()[0], sys.exc_info()[1]))
         quit()
 
     method_name(bg, path_background + "background_{}.png".format(n))
