@@ -22,7 +22,7 @@ Build a predictor function to predict price of a home:
 ```
 
 ### Topics
-- Categorial variables
+- Categorical variables
     - Nominal, do not have order relationship. Male/Female, different colors etc
     - Ordinal, do have some sort of order relationship. Satisfied/Neutral/Dissatisfied, High/medium/low, etc
 - One Hot Encoding, using sklearn OneHotEncod
