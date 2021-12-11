@@ -5,6 +5,8 @@
 - [simple-neural-network](./ai/deep-learning)
 - [deep-learning](./ai/deep-learning)
 - [eur-lex-integration](./ai/eur-lex-integration)
+- [Scraping Linkedin jobs](./ai/scraping)
+- [Generating Images with Python](./ai/nft)
 
 ### Academic Content
 - [Geneve courses](./geneve)
@@ -12,10 +14,3 @@
 
 ### Data engineering Tools
 - [Hadoop and Spark](./tools/hadoop)
-
-
-### Libraries
-```
-python -m pip install --upgrade pip
-pip install --upgrade wheel
-```
