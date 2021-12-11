@@ -1,20 +1,23 @@
 import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as np
 
-
-def plot(xLabel, x, yLabel, y):
+def plot(xLabel, x, yLabel, y, printLine=False):
     plt.xlabel(xLabel)
     plt.ylabel(yLabel)
     plt.scatter(x, y, color='red', marker='+')
+    if printLine:
+        m, b = np.polyfit(x, y, 1)
+        plt.plot(x, m * x + b)
     plt.show()
 
 
 df = pd.read_csv("carprices.csv")
 print("\ndf: \n", df.head())
-print("tot rows df: ", len(df))
+print("df rows x col: ", df.shape)
 
-plot('Mileage', df['Mileage'], 'Sell Price($)', df['Sell Price($)'])
-plot('Age(yrs)', df['Age(yrs)'], 'Sell Price($)', df['Sell Price($)'])
+plot('Mileage', df['Mileage'], 'Sell Price($)', df['Sell Price($)'], True)
+plot('Age(yrs)', df['Age(yrs)'], 'Sell Price($)', df['Sell Price($)'], True)
 
 X = df[['Mileage', 'Age(yrs)']]
 y = df['Sell Price($)']

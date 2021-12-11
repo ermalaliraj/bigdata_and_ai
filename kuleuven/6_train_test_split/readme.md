@@ -1,8 +1,5 @@
-# Machine Learning - Dummy Variables & One Hot Encoding
+# Machine Learning - Train/Test split data
 
-Build a predictor function to predict price of a home:
-- 3400 square feet area, in west windsor
-- 2800 square feet area in robbindville
 
 
 # See
