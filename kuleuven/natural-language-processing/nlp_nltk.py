@@ -40,7 +40,7 @@ AI_blank = blankline_tokenize(AI)
 print("AI_blank: ", len(AI_blank), AI_blank)
 print("first paragraph: ", AI_blank[0])
 
-#
+# renovable energy
 string = "The best and most beautiful things in the world cannot be seen or even touched, they must be felt with the heart"
 quotes_tokens = nltk.word_tokenize(string)
 print("\nquotes_tokens: ", quotes_tokens)
