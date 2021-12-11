@@ -8,10 +8,6 @@
 # See
 - [Youtube Tutorial](https://www.youtube.com/watch?v=zM4VZR0px8E)
 - [Git Hub Tutorial](https://github.com/codebasics/py/blob/master/ML)
-
-
-https://www.kaggle.com/jacksonchou/hr-analytics
-
-
-- [Back to bigdata_and_ai](https://github.com/ermalaliraj/bigdata_and_ai)
+###
+- [Back to Bid Data & AI](https://github.com/ermalaliraj/bigdata_and_ai)
 

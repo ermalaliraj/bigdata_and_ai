@@ -35,4 +35,5 @@ Calculate each error with the line, square and sum them up and try to minimise i
 - [Youtube Tutorial](https://www.youtube.com/watch?v=8jazNUpO3lQ)
 - [Git Hub Tutorial](https://github.com/codebasics/py/tree/master/ML)
 - [scikit-learn](https://scikit-learn.org/stable/)
-- [Back to bigdata_and_ai](https://github.com/ermalaliraj/bigdata_and_ai)
+###
+- [Back to Bid Data & AI](https://github.com/ermalaliraj/bigdata_and_ai)

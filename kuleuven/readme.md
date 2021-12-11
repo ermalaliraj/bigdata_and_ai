@@ -12,7 +12,6 @@
 - [Logistic regression](./7_logistic_reg)
 - [K-means clustering](./k-means)
 - [Natural Language Processing](./natural-language-processing)
-
 ###
 - [Back to Bid Data & AI](https://github.com/ermalaliraj/bigdata_and_ai)
 

@@ -65,5 +65,6 @@ linear regression cna be applied. Il yes, then build a model that can answer the
 # See
 - [Youtube Tutorial](https://www.youtube.com/watch?v=9yl6-HEY7_s)
 - [Git Hub Tutorial](https://github.com/codebasics/py/tree/master/ML)
-- [Back to bigdata_and_ai](https://github.com/ermalaliraj/bigdata_and_ai)
+###
+- [Back to Bid Data & AI](https://github.com/ermalaliraj/bigdata_and_ai)
 
