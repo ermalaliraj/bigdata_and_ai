@@ -35,9 +35,8 @@ spark-shell --master spark://LAPTOP-HFC8LI3B:7077
 
 ### See
 
-- [downloads spark](https://spark.apache.org/downloads.html)
-- [install-spark-on-windows-10](https://phoenixnap.com/kb/install-spark-on-windows-10)
-- [Video Install Hadoop on Windows 10](https://www.youtube.com/watch?v=g7Qpnmi0Q-s)
-- [Hadoop on Windows 10](https://cwiki.apache.org/confluence/display/HADOOP2/Hadoop2OnWindows)
-- [KU Leuven courses](./kuleuven)
+- [Downloads Spark](https://spark.apache.org/downloads.html)
+- [How to install Spark on Windows 10](https://phoenixnap.com/kb/install-spark-on-windows-10)
+- [Video install Hadoop on Windows 10](https://www.youtube.com/watch?v=g7Qpnmi0Q-s)
+- [How to install Hadoop on Windows 10](https://cwiki.apache.org/confluence/display/HADOOP2/Hadoop2OnWindows)
 
