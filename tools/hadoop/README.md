@@ -1,14 +1,16 @@
-# Hadoop
+# Hadoop and Spark
 
 
 ### Steps
+
 - Download and install hadoop in c:/hadoop 
 - Unzip `HadoopConfiguration-FIXbin.rar` and replace its bin folder with hadoop/bin
 - Create `c:/hadoop/data/datanode` and `c:/hadoop/data/namenode` folders
-- replace 1 cmd and 4 xml files
+- Replace 1 cmd and 4 xml files
+- Download and install Spark in c:/spark
 
 
-### Run
+### Hadoop
 ```
 hdfs namenode -format
 
@@ -17,15 +19,15 @@ cd sbin
 start-all
 ```
 
-Console1
+
+### Spark
+
+Console1 - GUI (http://LAPTOP-HFC8LI3B:8080)
 ```
 spark-class org.apache.spark.deploy.master.Master
 ```
-GUI
-```
-http://LAPTOP-HFC8LI3B:8080 GUI
-```
-Console2
+
+Console2 - Spark Master
 ```
 spark-shell --master spark://LAPTOP-HFC8LI3B:7077
 ```
