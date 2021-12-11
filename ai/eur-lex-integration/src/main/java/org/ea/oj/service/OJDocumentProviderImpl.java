@@ -37,11 +37,12 @@ public class OJDocumentProviderImpl implements OJDocumentProvider {
     @Override
     public String getFormexDocument(String type, int year, int number) {
         try {
-            String urlDocument = getOJFormexDocumentUrl(type, year, number);
-            LOG.trace("OJFormexDocumentUrl: " + urlDocument);
+            String jsonOJResponse = getCellarFromOJ(type, year, number);
+            String urlDocument = getCellarId(jsonOJResponse);
             String formexDocument = null;
             if (urlDocument != null) {
                 urlDocument = urlDocument + DOC_TYPE;
+                LOG.trace("CELLAR document url: " + urlDocument);
                 formexDocument = restTemplate.getForObject(urlDocument, String.class);
             }
             LOG.trace("FormexDocument: \n" + formexDocument);
@@ -51,7 +52,7 @@ public class OJDocumentProviderImpl implements OJDocumentProvider {
         }
     }
 
-    private String getOJFormexDocumentUrl(String type, int year, int number) throws IOException {
+    private String getCellarFromOJ(String type, int year, int number) {
         QueryEngineHTTP qexec = null;
         try {
             ParameterizedSparqlString queryStr = new ParameterizedSparqlString();
@@ -91,9 +92,8 @@ public class OJDocumentProviderImpl implements OJDocumentProvider {
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
             ResultSetFormatter.outputAsJSON(outputStream, results);
             String json = new String(outputStream.toByteArray());
-            LOG.trace("OJ Sparql Response: \n{}", json);
-
-            return getDocumentUrl(json);
+            LOG.trace("OJ Sparql Response as json: \n{}", json);
+            return json;
         } finally {
             if (qexec != null) {
                 qexec.close();
@@ -101,7 +101,7 @@ public class OJDocumentProviderImpl implements OJDocumentProvider {
         }
     }
 
-    private String getDocumentUrl(String json) throws IOException {
+    private String getCellarId(String json) throws IOException {
         String uriDocument = null;
         ObjectMapper mapper = new ObjectMapper();
         JsonNode rootNode = mapper.readTree(json);
@@ -110,6 +110,7 @@ public class OJDocumentProviderImpl implements OJDocumentProvider {
             JsonNode manifestation = bindings.get(0).get("manifestation");
             uriDocument = manifestation.size() > 0 ? manifestation.get("value").textValue() : null;
         }
+//        LOG.trace("cellar link: {}", uriDocument);
         return uriDocument;
     }
 

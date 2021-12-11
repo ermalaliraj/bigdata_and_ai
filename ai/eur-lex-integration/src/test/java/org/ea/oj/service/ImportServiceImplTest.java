@@ -59,7 +59,7 @@ public class ImportServiceImplTest extends AbstractSpringTest {
         String type = "reg";
         int year = 2013;
         int number = 123;
-        for(int i = 6; i<= 100; i++){
+        for(int i = 6; i<= 1; i++){
             String document = importServiceImpl.getAknDocument(type, year, i);
             Thread.sleep(1000);
         }

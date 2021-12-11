@@ -1,6 +1,11 @@
 # Big Data and AI 
 
 
+```
+python -m pip install --upgrade pip
+pip install --upgrade wheel
+```
+
 
 ### Content
 
