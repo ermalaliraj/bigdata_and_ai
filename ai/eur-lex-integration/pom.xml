@@ -5,7 +5,7 @@
     <groupId>org.ea</groupId>
     <artifactId>eur-lex-integration</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <properties>
         <project.java.version>1.8</project.java.version>

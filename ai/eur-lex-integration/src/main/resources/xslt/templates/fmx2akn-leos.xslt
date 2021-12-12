@@ -1,37 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0" xpath-default-namespace="" xmlns:fmx="http://formex.publications.europa.eu/schema/formex-05.21-20110601.xd" xmlns:leos="urn:eu:europa:ec:leos">
-    <!-- author : V. Parisse
-        Changes :
-- 2017-05-18 : a list is not inside a subparagraph
-- complex alinea, table, formula, list of definition
-- 30-06-2017 
-- complete some metadata (FRBRlanguage, FRBRcountry, FRBRformat
-- modify the namespace: http://docs.oasis-open.org/legaldocml/ns/akn/3.0
-- restructure the NP/TXT treatment
-- 11-07-2017
-- longTitle : 1 <p>; docPurpose; docType for all the second line; empty docStage
-- every identifier -> GUID
-- add the number of the footnote
-- intro recitals in a <block>
-- identify title, part, chapter, section, subsection ; hcontainer for other
-- 2017-09-06 : accept "sub-section" and "subsection" for a subsection
-- when ARTICLE has no ART_STI, generates an empty heading.
--2017-10-10 : only one <p> in a recital
-2017-10-24 : correct the authorialNote in recital
-2017-10-26 : attribute leos:notSupported added for articles containing modification on other act or mathematical formulas.
-2018-02-08 : point temporary changed, after need to be indent
-2018-03-02 : generated GUID starts with a "_" if identifier starts with a digit
-2018-03-27 : replace &nbsp; by ' '
-2018-03-27 : GUID for article are random numbers (no more coming from the id of Formex)
-2018-03-27 : remove GUID for authorialNote and paragraph
-2018-04-12 : remove spaces and indentation (xml:output  indent="no" )
-2019-01-11 : correct recitalsIntro in recitals, formulas and signatory
-2019-06-07 : escape " and ' characters. Cleanup extra whitespace in texts elements.
-2019-07-02 : article/alinea - fixed LIST alone inside a PARAGRAPH. Now LIST is created inside a PARAGRAPH together with previous P
-                as SUBPARAGRAPH or an empty SUBPARAGRAPH is there's no previous P (PAR -> SUBPAR + LIST)
-2019-09-27 : escape ‘, ’, “, ”, – and — characters.
-2019-10-03 : manage the indent
--->
     <xsl:character-map name="special-characters">
         <xsl:output-character character="&#160;" string=" "/>
         <xsl:output-character character="&#34;" string="&amp;quot;"/>

@@ -1,5 +1,5 @@
 url: http://publications.europa.eu/webapi/rdf/sparql   (remove this line from the query)
-eli vocabolary: http://publications.europa.eu/resource/cellar/427fb40c-2d9e-11eb-b27b-01aa75ed71a1.0001.02/DOC_1 
+http://publications.europa.eu/resource/cellar/427fb40c-2d9e-11eb-b27b-01aa75ed71a1.0001.02/DOC_1
 http://publications.europa.eu/resource/cellar/eacea2d9-fd33-11e8-a96d-01aa75ed71a1.0001.01/DOC_2
 https://eur-lex.europa.eu/eli-register/technical_information.html (how to)
 

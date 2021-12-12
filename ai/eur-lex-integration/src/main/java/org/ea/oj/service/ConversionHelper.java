@@ -47,7 +47,7 @@ public class ConversionHelper {
             StreamResult result = new StreamResult(outWriter);
             transformer.transform(xmlSource, result);
             StringBuffer sb = outWriter.getBuffer();
-            LOG.trace("Transformed in AKOMA NTOSO: \n" + sb.toString());
+            LOG.trace("Document in Akoma Ntoso format: \n" + sb.toString());
             return sb.toString();
         } catch (Exception e) {
             throw new RuntimeException("Unable to convert to AKN", e);

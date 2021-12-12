@@ -45,7 +45,7 @@ public class OJDocumentProviderImpl implements OJDocumentProvider {
                 LOG.trace("CELLAR document url: " + urlDocument);
                 formexDocument = restTemplate.getForObject(urlDocument, String.class);
             }
-            LOG.trace("FormexDocument: \n" + formexDocument);
+            LOG.trace("FormexDocument from OJ: \n" + formexDocument);
             return formexDocument;
         } catch (IOException e) {
             throw new RuntimeException(String.format("Cannot get document from OJ for type {}, year {}, number {}", type, year, number), e);

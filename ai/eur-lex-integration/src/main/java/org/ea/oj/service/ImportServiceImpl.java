@@ -48,17 +48,16 @@ class ImportServiceImpl implements ImportService {
         String aknDocument = null;
         String formexDocument = getFormexDocument(type, year, number);
         if (formexDocument != null) {
-            LOG.info("Found in  OJ for {}/{}/{} document of {} length" ,  type,  year , number, formexDocument.length());
+            LOG.info("Found in  OJ {}/{}/{} document of {} length" ,  type,  year , number, formexDocument.length());
             try {
                 String fileName = OJ_OUTPUT_PATH + type + "_" + year + "_" + number;
-//                FileUtils.writeByteArrayToFile(new File(fileName + "_oj.xml"), formexDocument.getBytes(StandardCharsets.UTF_8));
                 aknDocument = conversionHelper.convertFormexToAKN(formexDocument);
                 FileUtils.writeByteArrayToFile(new File(fileName + "_akn.xml"), aknDocument.getBytes(StandardCharsets.UTF_8));
             } catch (Exception e) {
                 throw new RuntimeException(String.format("Cannot get AKN from OJ for type/year/nr {}/{}/{}", type, year, number), e);
             }
         } else {
-            LOG.info("Didn't found in OJ for " + type + "/" + year + "/" + number);
+            LOG.info("Didn't found in OJ  {}/{}/{}", type, year, number);
         }
         return aknDocument;
     }

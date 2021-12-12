@@ -16,8 +16,6 @@ package org.ea.oj.service;
 import org.ea.util.SpringUtil;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.springframework.web.client.RestTemplate;
 
 import javax.xml.transform.Transformer;
@@ -55,13 +53,14 @@ public class ImportServiceImplTest extends AbstractSpringTest {
     }
 
     @Test
-    public void test_getAknDocument() throws InterruptedException {
+    public void test_getAknDocument() {
         String type = "reg";
         int year = 2013;
-        int number = 123;
-        for(int i = 6; i<= 1; i++){
-            String document = importServiceImpl.getAknDocument(type, year, i);
-            Thread.sleep(1000);
-        }
+        int number = 1303;
+//        for(int i = 6; i<= 6; i++){
+        String document = importServiceImpl.getAknDocument(type, year, number);
+        assertNotNull(document);
+//            Thread.sleep(1000);
+//        }
     }
 }
