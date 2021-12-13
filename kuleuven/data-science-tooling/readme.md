@@ -85,6 +85,7 @@ numbers.reduce(lambda x : sum(x))
 - [Azure Studio Machine Learning](https://studio.azureml.net)
 - [Azure machine-learning](https://docs.microsoft.com/en-us/azure/machine-learning/)
 - [Online notebook google](https://colab.research.google.com/)
+- [Hadoop Video](https://www.youtube.com/watch?v=aReuLtY0YMI)
 
 - [anaconda](https://www.anaconda.com/products/individual) Includes Jupyter, Python, data science package repository (also for R)
 
