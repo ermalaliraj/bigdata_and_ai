@@ -1,3 +1,5 @@
+import math
+
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
@@ -15,6 +17,16 @@ def plot(xLabel, x, yLabel, y, printLine=False):
     plt.show()
 
 
+def sigmoid(x):
+    return 1 / (1 + math.exp(-x))
+
+
+def prediction_function(age):
+    z = 0.042 * age - 1.53  # 0.04150133 ~ 0.042 and -1.52726963 ~ -1.53
+    y = sigmoid(z)
+    return y
+
+
 df = pd.read_csv("insurance_data.csv")
 print("\ndf: \n", df.head())
 print("df rows x col: ", df.shape)
@@ -27,6 +39,15 @@ print("\nX_test: \n", X_test)
 model = LogisticRegression()
 model.fit(X_train, y_train)
 
-print("\nmodel.predict(X_test): ", model.predict(X_test))
-print("model.score(X_test, y_test): ", model.score(X_test, y_test))
+print("model.predict(X_test): ", model.predict(X_test))
+print("\nmodel.score(X_test, y_test)  (accuracy): ", model.score(X_test, y_test))
 print("model.predict_proba(X_test): \n", model.predict_proba(X_test))
+
+print("\nmodel.coef_: ", model.coef_)  # indicates value of m in y=m*x + b equation
+print("model.intercept_: ", model.intercept_)  # indicates value of b in y=m*x + b equation
+
+print("\nprediction_function(20): ", prediction_function(20))
+print("prediction_function(35): ", prediction_function(35))
+print("prediction_function(50): ", prediction_function(50))
+print("prediction_function(70): ", prediction_function(70))
+print("prediction_function(90): ", prediction_function(90))
