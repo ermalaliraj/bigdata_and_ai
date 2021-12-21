@@ -1,0 +1,9 @@
+cat 1
+mouse 1
+lion 1
+deer 1
+Tiger 1
+lion 1
+Elephant 1
+lion 1
+Bear 1

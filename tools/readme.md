@@ -87,6 +87,10 @@ numbers.reduce(lambda x : sum(x))
 - [Online notebook google](https://colab.research.google.com/)
 - [Hadoop Video](https://www.youtube.com/watch?v=aReuLtY0YMI)
 
+[MapReduce Video](https://www.youtube.com/watch?v=SqvAaB3vK8U)
+[MapReduce Video2](https://www.youtube.com/watch?v=b-IvmXoO0bU)
+
+
 - [anaconda](https://www.anaconda.com/products/individual) Includes Jupyter, Python, data science package repository (also for R)
 
 ###
