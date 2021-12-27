@@ -29,13 +29,12 @@ print("promotion_last_5years level of people who DIDN'T left is: ", groupby.iloc
 ct = pd.crosstab(df.salary, df.left)
 print("\npd.crosstab(df.salary, df.left): \n", ct)
 ct.plot(kind='bar')
-plt.show()
 
-pd.crosstab(df.Department, df.left).plot(kind='bar')
-plt.show()
+# pd.crosstab(df.Department, df.left).plot(kind='bar')
 
 subdf = df[['satisfaction_level', 'average_montly_hours', 'promotion_last_5years', 'salary']]
 print("subdf: \n", subdf.head())
+# pd.crosstab(subdf.salarysatisfaction_level, subdf.).plot(kind='bar')
 
 salary_dummies = pd.get_dummies(subdf.salary, prefix="salary")
 print("salary_dummies: \n", salary_dummies.head())
@@ -61,3 +60,6 @@ model.fit(X_train, y_train)
 
 print("model.predict(X_test): ", model.predict(X_test))
 print("model.score(X_test,y_test): ", model.score(X_test, y_test))
+
+
+plt.show()
