@@ -34,7 +34,7 @@ def groupByCityAndSubject_count(df, city="Tiranë"):
                   .agg({'Subjekti': ['nunique']}))
     print("groupByCityAndSubject_count():\n ", groupBy_df)
     groupBy_df.plot(kind='bar', x='DRT', y='Subjekti')
-    plt.xlabel('Qyteti')
+    plt.xlabel('Qyteti ' + city)
     plt.ylabel('Numri i Subjekteve')
     plt.show()
 
@@ -47,8 +47,8 @@ def groupByCityAndProfession_count(df, city="Tiranë"):
                   # .agg({'count': 'count'})
                   )
     groupBy_df.plot(kind='bar', x='DRT', y='Profesioni')
-    plt.xlabel('Qyteti')
-    plt.ylabel('Numri total i Profesioneve')
+    plt.xlabel('Qyteti ' + city)
+    plt.ylabel('Numri i Profesioneve')
     print("groupByCityAndProfession_count:\n ", groupBy_df)
     plt.show()
 
@@ -69,34 +69,37 @@ def groupByCityAndProfession_count(df, city="Tiranë"):
 
 
 def groupByProfession_nrEmployees(df, city="Tiranë"):
-    # df = df.loc[df["DRT"].str.contains(city)]
     df = df[df['DRT'].str.contains(city) == True]
     print("groupByProfession_nrEmployees: {} shape: {} ".format(city, df.shape))
 
-    groupBy_df = (df.groupby('Profesioni', as_index=False)['Kategoria']
-                  .agg({'count': 'count'})
+    groupBy_df = (df.groupby('Profesioni', as_index=False)['EMRI I PLOTE']
+                  .agg(['count'])
                   .query('count > 4'))
-    # print("groupByProfession_nrEmployees():\n ", groupBy_df)
-    groupBy_df.plot(kind='bar', x='Profesioni', y='count')
-    plt.xlabel('Profesioni')
+    groupBy_df.plot(kind='bar')
+    plt.xlabel('Profesionet ' + city)
     plt.ylabel('Numri i te punesuarve')
     plt.show()
+    print("groupByProfession_nrEmployees():\n ", groupBy_df)
 
 
 def groupByProfession_money(df, city="Tiranë"):
     df = df[df['DRT'].str.contains(city) == True]
-    print("city: {} shape: {} ".format(city, df.shape))
+    print("groupByProfession_money: {} shape: {} ".format(city, df.shape))
 
-    # groupBy_df = df.groupby(['Profesioni']).mean()
     groupBy_df = (df.groupby('Profesioni', as_index=False)['Paga Bruto']
                   .agg(['count', 'min', 'max', 'mean'])
                   .query('count > 4'))
 
-    print("groupBy_df \n", groupBy_df)
+    print("groupByProfession_money \n", groupBy_df)
     groupBy_df.plot(kind='bar')
-    plt.xlabel('Profesioni')
-    plt.ylabel('Numri i te punesuarve')
+    plt.xlabel('Profesionet ' + city)
+    plt.ylabel('Te ardhurat mujore')
     plt.show()
+
+
+def showProfession_money(df, city="Tiranë"):
+    df = df[df['DRT'].str.contains(city) == True]
+    print("city: {} shape: {} ".format(city, df.shape))
 
 
 def searchInExcel(fileIn):
@@ -105,10 +108,11 @@ def searchInExcel(fileIn):
     time_load = time.time()
     print("loaded excel file in {:,.1f} secs".format(time_load - time_start))
 
-    # groupByCityAndSubject_count(df, "")
-    # groupByCityAndProfession_count(df, "")
-    groupByProfession_nrEmployees(df)
-    # groupByProfession_money(df)
+    groupByCityAndSubject_count(df, "")
+    groupByCityAndProfession_count(df, "")
+    groupByProfession_nrEmployees(df, "")
+    groupByProfession_money(df, "")
+    showProfession_money(df, "")
 
 
 if __name__ == "__main__":
