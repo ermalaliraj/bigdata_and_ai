@@ -1,6 +1,7 @@
 import pandas as pd
 from matplotlib import pyplot as plt
 
+pd.options.display.width = 0
 df = pd.read_csv("HR_comma_sep.csv")
 print("\ndf: \n", df.head())
 print("df rows x col: ", df.shape)
@@ -30,26 +31,20 @@ ct = pd.crosstab(df.salary, df.left)
 print("\npd.crosstab(df.salary, df.left): \n", ct)
 ct.plot(kind='bar')
 
-# pd.crosstab(df.Department, df.left).plot(kind='bar')
+pd.crosstab(df.Department, df.left).plot(kind='bar')
 
 subdf = df[['satisfaction_level', 'average_montly_hours', 'promotion_last_5years', 'salary']]
-print("subdf: \n", subdf.head())
-# pd.crosstab(subdf.salarysatisfaction_level, subdf.).plot(kind='bar')
+print("\nsubdf: \n", subdf.head())
 
-salary_dummies = pd.get_dummies(subdf.salary, prefix="salary")
-print("salary_dummies: \n", salary_dummies.head())
-df_with_dummies = pd.concat([subdf, salary_dummies], axis='columns')
-print("df_with_dummies: \n", df_with_dummies.head())
-
+subdf_dummies = pd.get_dummies(subdf.salary, prefix="salary")
+print("\nsubdf_dummies: \n", subdf_dummies.head())
+df_with_dummies = pd.concat([subdf, subdf_dummies], axis='columns')
 df_with_dummies.drop('salary', axis='columns', inplace=True)
-print("df_with_dummies.drop('salary'): \n", df_with_dummies.head())
-
 X = df_with_dummies
-
-print("df_with_dummies: \n", X.head())
+print(" \n subdf_dummies as X: \n", df_with_dummies.head())
 
 y = df.left
-print("df.left: \n", y)
+print("\ndf.left as y: \n", y)
 
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
@@ -58,8 +53,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.3)
 model = LogisticRegression()
 model.fit(X_train, y_train)
 
-print("model.predict(X_test): ", model.predict(X_test))
+print("\nmodel.predict(X_test): ", model.predict(X_test))
 print("model.score(X_test,y_test): ", model.score(X_test, y_test))
-
 
 plt.show()

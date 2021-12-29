@@ -1,73 +1,61 @@
 df:
-    satisfaction_level  last_evaluation  ...  Department  salary
-0                0.38             0.53  ...       sales     low
-1                0.80             0.86  ...       sales  medium
-2                0.11             0.88  ...       sales  medium
-3                0.72             0.87  ...       sales     low
-4                0.37             0.52  ...       sales     low
-
-[5 rows x 10 columns]
+    satisfaction_level  last_evaluation  number_project  average_montly_hours  time_spend_company  Work_accident  left  promotion_last_5years Department  salary
+0                0.38             0.53               2                   157                   3              0     1                      0      sales     low
+1                0.80             0.86               5                   262                   6              0     1                      0      sales  medium
+2                0.11             0.88               7                   272                   4              0     1                      0      sales  medium
+3                0.72             0.87               5                   223                   5              0     1                      0      sales     low
+4                0.37             0.52               2                   159                   3              0     1                      0      sales     low
 df rows x col:  (14999, 10)
 
-left.shape:  (3571, 10)
-retained.shape:  (11428, 10)
+df[df.left == 1]:  (3571, 10)
+df[df.left == 0]:  (11428, 10)
 
-df.groupby('left'): 
-       satisfaction_level  last_evaluation  ...  Work_accident  promotion_last_5years
-left                                       ...                                      
-0               0.666810         0.715473  ...       0.175009               0.026251
-1               0.440098         0.718113  ...       0.047326               0.005321
+df.groupby('left'):
+       satisfaction_level  last_evaluation  number_project  average_montly_hours  time_spend_company  Work_accident  promotion_last_5years
+left
+0               0.666810         0.715473        3.786664            199.060203            3.380032       0.175009               0.026251
+1               0.440098         0.718113        3.855503            207.419210            3.876505       0.047326               0.005321
+Satisfaction level of people who left is:  0.44009801176140917
+Satisfaction level of people who DIDN'T left is:  0.666809590479516
 
-[2 rows x 7 columns]
+Work_accident of people who left is:  0.047325679081489776
+Work_accident of people who DIDN'T left is:  0.17500875043752187
 
-crosstab: 
+promotion_last_5years level of people who left is:  0.005320638476617194
+promotion_last_5years level of people who DIDN'T left is:  0.026251312565628283
+
+pd.crosstab(df.salary, df.left):
  left       0     1
-salary            
+salary
 high    1155    82
 low     5144  2172
 medium  5129  1317
-subdf: 
+
+subdf:
     satisfaction_level  average_montly_hours  promotion_last_5years  salary
 0                0.38                   157                      0     low
 1                0.80                   262                      0  medium
 2                0.11                   272                      0  medium
 3                0.72                   223                      0     low
 4                0.37                   159                      0     low
-salary_dummies: 
+
+subdf_dummies:
     salary_high  salary_low  salary_medium
 0            0           1              0
 1            0           0              1
 2            0           0              1
 3            0           1              0
 4            0           1              0
-df_with_dummies: 
-    satisfaction_level  average_montly_hours  ...  salary_low salary_medium
-0                0.38                   157  ...           1             0
-1                0.80                   262  ...           0             1
-2                0.11                   272  ...           0             1
-3                0.72                   223  ...           1             0
-4                0.37                   159  ...           1             0
 
-[5 rows x 7 columns]
-df_with_dummies.drop('salary'): 
-    satisfaction_level  average_montly_hours  ...  salary_low  salary_medium
-0                0.38                   157  ...           1              0
-1                0.80                   262  ...           0              1
-2                0.11                   272  ...           0              1
-3                0.72                   223  ...           1              0
-4                0.37                   159  ...           1              0
+ subdf_dummies as X:
+    satisfaction_level  average_montly_hours  promotion_last_5years  salary_high  salary_low  salary_medium
+0                0.38                   157                      0            0           1              0
+1                0.80                   262                      0            0           0              1
+2                0.11                   272                      0            0           0              1
+3                0.72                   223                      0            0           1              0
+4                0.37                   159                      0            0           1              0
 
-[5 rows x 6 columns]
-df_with_dummies: 
-    satisfaction_level  average_montly_hours  ...  salary_low  salary_medium
-0                0.38                   157  ...           1              0
-1                0.80                   262  ...           0              1
-2                0.11                   272  ...           0              1
-3                0.72                   223  ...           1              0
-4                0.37                   159  ...           1              0
-
-[5 rows x 6 columns]
-df.left: 
+df.left as y:
  0        1
 1        1
 2        1
@@ -80,7 +68,6 @@ df.left:
 14997    1
 14998    1
 Name: left, Length: 14999, dtype: int64
-model.predict(X_test):  [0 0 0 ... 0 0 0]
-model.score(X_test,y_test):  0.7728571428571429
 
-Process finished with exit code 0
+model.predict(X_test):  [0 0 0 ... 0 0 0]
+model.score(X_test,y_test):  0.7748571428571429
