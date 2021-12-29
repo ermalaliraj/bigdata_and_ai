@@ -51,7 +51,7 @@ To solve this situation, we need a line at 0,5 values, called Sigmoid function.<
 <img src="./doc/sigmoid.JPG" width="70%" height="auto">
 
 
-### Exercise
+### Exercise HR
 Download employee retention dataset from here: https://www.kaggle.com/giripujar/hr-analytics.
 1. Now do some exploratory data analysis to figure out which variables have direct and clear impact on employee retention 
 (i.e. whether they leave the company or continue to work)
@@ -61,6 +61,15 @@ Download employee retention dataset from here: https://www.kaggle.com/giripujar/
 5. Measure the accuracy of the model"
 
 
+### Exercise Multichoice
+Build a machine learning algorithm which can predict what is the number you wrote in a paper.
+In this case the Logistic regression is not Yes/No but a choice between 1 and 10.
+
+### Confusion matrix
+Confusion matrix shows in the diagonal the number of times the algorithm predicted right.
+
+
+<img src="./doc/multicast.png" width="95%" height="auto">
 
 # See
 - [Youtube Tutorial](https://www.youtube.com/watch?v=zM4VZR0px8E)
