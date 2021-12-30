@@ -34,7 +34,7 @@ y_predicted = model.predict(X_test)
 print("model.predict(X_test): \n", model.predict(X_test))
 
 cm = confusion_matrix(y_test, y_predicted)
-print("\ncm: \n", cm)
+print("\nconfusion_matrix: \n", cm)
 
 plt.figure(figsize = (10,7))
 sn.heatmap(cm, annot=True)
