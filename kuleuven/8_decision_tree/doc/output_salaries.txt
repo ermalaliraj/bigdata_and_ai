@@ -1,0 +1,70 @@
+df:
+   company                  job     degree  salary_more_then_100k
+0  google      sales executive  bachelors                      0
+1  google      sales executive    masters                      0
+2  google     business manager  bachelors                      1
+3  google     business manager    masters                      1
+4  google  computer programmer  bachelors                      0
+df rows x col:  (16, 4)
+
+df with LabelEncoder:
+        company                  job     degree  salary_more_then_100k  company_n  job_n  degree_n
+0       google      sales executive  bachelors                      0          2      2         0
+1       google      sales executive    masters                      0          2      2         1
+2       google     business manager  bachelors                      1          2      0         0
+3       google     business manager    masters                      1          2      0         1
+4       google  computer programmer  bachelors                      0          2      1         0
+5       google  computer programmer    masters                      1          2      1         1
+6   abc pharma      sales executive    masters                      0          0      2         1
+7   abc pharma  computer programmer  bachelors                      0          0      1         0
+8   abc pharma     business manager  bachelors                      0          0      0         0
+9   abc pharma     business manager    masters                      1          0      0         1
+10    facebook      sales executive  bachelors                      1          1      2         0
+11    facebook      sales executive    masters                      1          1      2         1
+12    facebook     business manager  bachelors                      1          1      0         0
+13    facebook     business manager    masters                      1          1      0         1
+14    facebook  computer programmer  bachelors                      1          1      1         0
+15    facebook  computer programmer    masters                      1          1      1         1
+
+df normalized (text col):
+     salary_more_then_100k  company_n  job_n  degree_n
+0                       0          2      2         0
+1                       0          2      2         1
+2                       1          2      0         0
+3                       1          2      0         1
+4                       0          2      1         0
+5                       1          2      1         1
+6                       0          0      2         1
+7                       0          0      1         0
+8                       0          0      0         0
+9                       1          0      0         1
+10                      1          1      2         0
+11                      1          1      2         1
+12                      1          1      0         0
+13                      1          1      0         1
+14                      1          1      1         0
+15                      1          1      1         1
+
+inputs_n: (to be found salary_more_then_100k value)
+     company_n  job_n  degree_n
+0           2      2         0
+1           2      2         1
+2           2      0         0
+3           2      0         1
+4           2      1         0
+5           2      1         1
+6           0      2         1
+7           0      1         0
+8           0      0         0
+9           0      0         1
+10          1      2         0
+11          1      2         1
+12          1      0         0
+13          1      0         1
+14          1      1         0
+15          1      1         1
+
+model.score(inputs_n,target):  1.0
+
+Is salary of Google, Computer Engineer, Bachelors degree > 100 k ?: [2, 1, 0]:  [0]
+Is salary of Google, Computer Engineer, Master degree > 100 k ?: [2, 1, 1]:  [1]
