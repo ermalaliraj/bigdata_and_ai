@@ -97,17 +97,18 @@ WHERE
 limit 100
 ```
 
-### Get all ELI resources
+### Get all ELI resources  (REG)
 
 ```
 PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
 PREFIX  cdm:  <http://publications.europa.eu/ontology/cdm#>
 
-SELECT DISTINCT  ?fmx4_act
+SELECT DISTINCT  substr(str(?OJ), 52, 3) substr(str(?OJ), 58, 4) ?OJ ?date_document ?fmx4_act
 WHERE
   { ?work  cdm:resource_legal_eli  ?eli ;
            cdm:work_date_document  ?date_document
-    FILTER ( substr(str(?date_document), 1, 4) IN ("2021") )
+    FILTER regex(str(?eli), "/reg/")
+    FILTER ( substr(str(?date_document), 1, 4) IN ("2016") )
     ?work  owl:sameAs  ?OJ
     FILTER regex(str(?OJ), "/oj/")
     OPTIONAL
@@ -119,44 +120,12 @@ WHERE
           { ?manif_fmx4  cdm:manifestation_manifests_expression  ?exp ;
                       cdm:manifestation_type  ?type_fmx4
             FILTER ( str(?type_fmx4) = "fmx4" )
+            BIND(strlen(?exp) AS ?len_o)
           }
       }
+    FILTER ( ?len_o != 0 )
     BIND(if(bound(?manif_fmx4), iri(concat(?manif_fmx4, "/DOC_2")), "") AS ?fmx4_act)
   }
-LIMIT   300
-```
-
-
-
-### Get all ELI resources  complete
-
-```
-PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
-PREFIX  cdm:  <http://publications.europa.eu/ontology/cdm#>
-
-SELECT DISTINCT substr(str(?OJ),52,3) as ?nr_oj substr(str(?OJ),58,4) as ?nr_seq ?OJ ?date_document ?fmx4_act
-WHERE
-  { ?work cdm:resource_legal_eli ?eli ; cdm:work_date_document ?date_document
-		FILTER(regex(str(?eli),'/reg/'))
-		FILTER(substr(str(?date_document), 1, 4) IN ("2021"))
-    ?work owl:sameAs  ?OJ
-    FILTER regex(str(?OJ), "/oj/")
-    OPTIONAL
-      { ?exp  cdm:expression_title ?title ;
-              cdm:expression_uses_language ?lang ;
-              cdm:expression_belongs_to_work ?work
-        FILTER(?lang = <http://publications.europa.eu/resource/authority/language/ENG>)
-        OPTIONAL
-          { ?manif_fmx4 cdm:manifestation_manifests_expression  ?exp ;
-						cdm:manifestation_type  ?type_fmx4
-            FILTER(str(?type_fmx4) = "fmx4")
-			BIND(STRLEN(?exp) AS ?len_o)  
-          }
-      }
-	  FILTER(?len_o != 0) 
-    BIND(if(bound(?manif_fmx4), iri(concat(?manif_fmx4, "/DOC_2")), "") AS ?fmx4_act)
-  }
-LIMIT 5
 ```
 
  
