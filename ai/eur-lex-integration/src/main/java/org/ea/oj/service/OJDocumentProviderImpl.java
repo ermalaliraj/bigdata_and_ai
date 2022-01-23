@@ -2,7 +2,6 @@ package org.ea.oj.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.jena.query.ParameterizedSparqlString;
 import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryExecutionFactory;
 import org.apache.jena.query.ResultSet;
@@ -16,6 +15,8 @@ import org.springframework.web.client.RestOperations;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class OJDocumentProviderImpl implements OJDocumentProvider {
@@ -35,49 +36,50 @@ public class OJDocumentProviderImpl implements OJDocumentProvider {
     }
 
     @Override
-    public String getFormexDocument(String type, int year, int number) {
+    public String getActForYearAndNumber(String type, int year, int number) {
         try {
-            String jsonOJResponse = getCellarFromOJ(type, year, number);
-            String urlDocument = getCellarId(jsonOJResponse);
-            String formexDocument = null;
-            if (urlDocument != null) {
-                urlDocument = urlDocument + DOC_TYPE;
-                LOG.trace("CELLAR document url: " + urlDocument);
-                formexDocument = restTemplate.getForObject(urlDocument, String.class);
+            String jsonOJResponse = getActForYearAndNumberFromOJ(type, year, number);
+            String urlAct = getUrlAct(jsonOJResponse);
+            String doc = null;
+            if (urlAct != null) {
+                urlAct = urlAct + DOC_TYPE;
+                LOG.trace("CELLAR url: " + urlAct);
+                doc = restTemplate.getForObject(urlAct, String.class);
             }
-            LOG.trace("FormexDocument from OJ: \n" + formexDocument);
-            return formexDocument;
+            LOG.trace("Formex ACT from OJ: " + doc);
+            return doc;
         } catch (IOException e) {
             throw new RuntimeException(String.format("Cannot get document from OJ for type {}, year {}, number {}", type, year, number), e);
         }
     }
 
-    private String getCellarFromOJ(String type, int year, int number) {
+    @Override
+    public List<String> getAllActsForYears(String type, List<Integer> years) {
+        String jsonOJResponse = getUrlActsFromOJ(type, years);
+        List<String> urlActs = getUrlActs(jsonOJResponse);
+        List<String> acts = new ArrayList<>();
+        for (int i = 0; i < urlActs.size(); i++) {
+            String url = urlActs.get(i);
+            try {
+                LOG.trace(i + " - CELLAR url: " + url);
+                if (url != null && url.length() > 0) {
+                    String doc = restTemplate.getForObject(url, String.class);
+                    LOG.trace("Formex ACT from OJ: " + doc);
+                    acts.add(doc);
+                }
+            } catch (Exception e) {
+//                throw new RuntimeException(String.format("Cannot get document from OJ for type {}, year {}, number {}, {}", type, years, i), e);
+                LOG.error("Cannot get document from OJ for type {}, year {}, i {}, error: {}", type, years, i, e.getMessage());
+            }
+        }
+        return acts;
+
+    }
+
+    private String getUrlActsFromOJ(String type, List<Integer> years) {
         QueryEngineHTTP qexec = null;
         try {
-            ParameterizedSparqlString queryStr = new ParameterizedSparqlString();
-            queryStr.setNsPrefix("cdm", "http://publications.europa.eu/ontology/cdm#");
-            queryStr.append("SELECT DISTINCT ?manifestation ");
-            queryStr.append("where {");
-            queryStr.append(" ?work cdm:resource_legal_eli ?eli . filter(?eli = 'http://data.europa.eu/eli/");
-            queryStr.append(type);
-            queryStr.append("/");
-            queryStr.append(year);
-            queryStr.append("/");
-            queryStr.append(number);
-            queryStr.append("/oj'");
-            queryStr.append("^^");
-            queryStr.appendIri("http://www.w3.org/2001/XMLSchema#anyURI");
-            queryStr.append(") ");
-            queryStr.append(" ?work ^cdm:expression_belongs_to_work ?expression . ");
-            queryStr.append("?expression cdm:expression_uses_language ?lng. ");
-            queryStr.append("filter(?lng=");
-            queryStr.appendIri("http://publications.europa.eu/resource/authority/language/ENG");
-            queryStr.append(") ");
-            queryStr.append("?manifestation cdm:manifestation_manifests_expression ?expression ; ");
-            queryStr.append("cdm:manifestation_type ?type filter(regex(str(?type),'fmx4'))");
-            queryStr.append("}");
-            Query query = queryStr.asQuery();
+            Query query = SPARQLQueryCatalog.getAllActsForYears(type, years);
 
             qexec = QueryExecutionFactory.createServiceRequest(ojUrl, query);
             qexec.addDefaultGraph("");
@@ -101,7 +103,34 @@ public class OJDocumentProviderImpl implements OJDocumentProvider {
         }
     }
 
-    private String getCellarId(String json) throws IOException {
+    private String getActForYearAndNumberFromOJ(String type, int year, int number) {
+        QueryEngineHTTP qexec = null;
+        try {
+            Query query = SPARQLQueryCatalog.getActForYearAndNumber(type, year, number);
+
+            qexec = QueryExecutionFactory.createServiceRequest(ojUrl, query);
+            qexec.addDefaultGraph("");
+            qexec.addParam("debug", PARAM_DEBUG_VALUE);
+            qexec.addParam("timeout", String.valueOf(PARAM_TIMEOUT_VALUE));
+            qexec.addParam("format", PARAM_FORMAT_VALUE);
+            qexec.setTimeout(PARAM_TIMEOUT_VALUE, PARAM_TIMEOUT_VALUE);
+
+            LOG.trace("OJ Sparql URL: " + ojUrl);
+            LOG.trace("OJ Sparql Query: \n{}", qexec.getQuery().toString(qexec.getQuery().getSyntax()));
+            ResultSet results = qexec.execSelect();
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            ResultSetFormatter.outputAsJSON(outputStream, results);
+            String json = new String(outputStream.toByteArray());
+            LOG.trace("OJ Sparql Response as json: \n{}", json);
+            return json;
+        } finally {
+            if (qexec != null) {
+                qexec.close();
+            }
+        }
+    }
+
+    private String getUrlAct(String json) throws IOException {
         String uriDocument = null;
         ObjectMapper mapper = new ObjectMapper();
         JsonNode rootNode = mapper.readTree(json);
@@ -110,8 +139,27 @@ public class OJDocumentProviderImpl implements OJDocumentProvider {
             JsonNode manifestation = bindings.get(0).get("manifestation");
             uriDocument = manifestation.size() > 0 ? manifestation.get("value").textValue() : null;
         }
-//        LOG.trace("cellar link: {}", uriDocument);
         return uriDocument;
+    }
+
+    private List<String> getUrlActs(String json) {
+        List<String> urlActs = new ArrayList<>();
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode rootNode = null;
+        try {
+            rootNode = mapper.readTree(json);
+        } catch (IOException e) {
+            LOG.trace("Cannot parse JSON file " + json);
+        }
+
+        JsonNode bindings = rootNode.get("results").get("bindings");
+        for (int i = 0; i < bindings.size(); i++) {
+            JsonNode fmx4_act = bindings.get(i).get("fmx4_act");
+            if (fmx4_act != null && fmx4_act.size() > 0 && fmx4_act.get("value") != null) {
+                urlActs.add(fmx4_act.get("value").textValue());
+            }
+        }
+        return urlActs;
     }
 
 }

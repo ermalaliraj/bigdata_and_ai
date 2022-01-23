@@ -16,8 +16,8 @@ import java.util.concurrent.TimeUnit;
 @ContextConfiguration(locations = {"classpath:servicesContext.xml"})
 public class AbstractSpringTest {
 
-    @Rule
-    public Timeout timeout = new Timeout(60, TimeUnit.SECONDS);
+//    @Rule
+//    public Timeout timeout = new Timeout(60, TimeUnit.SECONDS);
 
     @Before
     public void setup() {

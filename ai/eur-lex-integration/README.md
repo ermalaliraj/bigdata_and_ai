@@ -46,7 +46,7 @@ PREFIX cdm: <http://publications.europa.eu/ontology/cdm#>
 SELECT DISTINCT  ?manifestation
 WHERE
   { ?work  cdm:resource_legal_eli  ?eli
-FILTER ( ?eli = "http://data.europa.eu/eli/reg/2013/1303/oj"^^<http://www.w3.org/2001/XMLSchema#anyURI> )
+FILTER ( ?eli = "http://data.europa.eu/eli/reg/2021/467/oj"^^<http://www.w3.org/2001/XMLSchema#anyURI> )
     ?work ^cdm:expression_belongs_to_work ?expression .
     ?expression  cdm:expression_uses_language  ?lng
 FILTER ( ?lng = <http://publications.europa.eu/resource/authority/language/ENG> )
@@ -54,20 +54,69 @@ FILTER ( ?lng = <http://publications.europa.eu/resource/authority/language/ENG> 
     cdm:manifestation_type  ?type
 FILTER regex(str(?type), "fmx4")
   }
-  ```
+```
 Response:
-  ``` 
+``` 
 {  "head": {"link": [], "vars": ["manifestation"]},
   "results": {
-    "distinct": false, "ordered": true, "bindings": [ {"manifestation": { "type": "uri",
+    "distinct": false, "ordered": true, "bindings": [ {"manresource_legal_eliifestation": { "type": "uri",
           "value": "http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02"
         }}]}
 }
-  ```
+```
 Use the postfix `/zip` do download the full Act or `/DOC_2` for the Legal Text. Examples:
 [http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_2](http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/DOC_2)
 [http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/zip](http://publications.europa.eu/resource/cellar/fcd9e6d2-6c02-11e3-9afb-01aa75ed71a1.0006.02/zip)
 [http://publications.europa.eu/resource/cellar/c6b2f374-231f-47e0-a846-d23b9375af12.0003.01](http://publications.europa.eu/resource/cellar/c6b2f374-231f-47e0-a846-d23b9375af12.0003.01)
+ 
+ 
+### Find all Acts
+```
+PREFIX cdm: <http://publications.europa.eu/ontology/cdm#>
+SELECT distinct ?OJ ?title_ group_concat(distinct ?author; separator=",") as ?authors ?date_document ?manif_fmx4 ?fmx4_to_download
+WHERE 
+{
+	?work a cdm:official-journal.
+	?work cdm:work_date_document ?date_document.
+	FILTER(substr(str(?date_document),1,4)='2019')
+	?work cdm:work_created_by_agent ?author.
+	?work owl:sameAs ?OJ.
+	FILTER(regex(str(?OJ),'/oj/'))
+	OPTIONAL{?exp cdm:expression_title ?title.
+		?exp cdm:expression_uses_language ?lang.
+		?exp cdm:expression_belongs_to_work ?work.
+		FILTER(?lang =<http://publications.europa.eu/resource/authority/language/ENG>)
+		OPTIONAL{?manif_fmx4 cdm:manifestation_manifests_expression ?exp.
+			?manif_fmx4 cdm:manifestation_type ?type_fmx4.
+			FILTER(str(?type_fmx4)='fmx4')
+		}
+	}
+	BIND(IF(BOUND(?title),?title,'The Official Journal does not exist in that language'@en) as ?title_)
+	BIND(IF(BOUND(?manif_fmx4),IRI(concat(?manif_fmx4,"/zip")),"") as ?fmx4_to_download)
+}order by ?date_document
+
+
+PREFIX cdm: <http://publications.europa.eu/ontology/cdm#>
+SELECT distinct ?fmx4_act 
+WHERE 
+{
+	?work cdm:resource_legal_eli ?eli.
+	?work cdm:work_date_document ?date_document.
+		FILTER(substr(str(?date_document),1,4) IN ('2019'))
+	?work owl:sameAs ?OJ.
+		FILTER(regex(str(?OJ),'/oj/'))
+		OPTIONAL{?exp cdm:expression_title ?title.
+			?exp cdm:expression_uses_language ?lang.
+			?exp cdm:expression_belongs_to_work ?work.
+			FILTER(?lang =<http://publications.europa.eu/resource/authority/language/ENG>)
+			OPTIONAL{?manif_fmx4 cdm:manifestation_manifests_expression ?exp.
+				?manif_fmx4 cdm:manifestation_type ?type_fmx4.
+				FILTER(str(?type_fmx4)='fmx4')
+			}
+	}
+	BIND(IF(BOUND(?manif_fmx4),IRI(concat(?manif_fmx4,"/DOC_2")),"") as ?fmx4_act)
+}
+```
  
 ### Links 
 - [EUR-lex](https://eur-lex.europa.eu/content/welcome/about.html)

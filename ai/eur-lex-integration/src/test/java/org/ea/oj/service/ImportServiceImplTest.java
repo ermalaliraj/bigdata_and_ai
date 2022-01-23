@@ -20,6 +20,9 @@ import org.springframework.web.client.RestTemplate;
 
 import javax.xml.transform.Transformer;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.Assert.assertNotNull;
 
 public class ImportServiceImplTest extends AbstractSpringTest {
@@ -40,15 +43,14 @@ public class ImportServiceImplTest extends AbstractSpringTest {
         restTemplate = new RestTemplate();
         ojDocumentProvider = new OJDocumentProviderImpl(restTemplate);
         importServiceImpl = new ImportServiceImpl(ojDocumentProvider, conversionHelper);
-
     }
 
     @Test
     public void test_getFormexDocument() {
         String type = "reg";
-        int year = 2013;
-        int number = 1303;
-        String document = importServiceImpl.getFormexDocument(type, year, number);
+        int year = 2021;
+        int number = 467;
+        String document = importServiceImpl.getFormexActForYearAndNumber(type, year, number);
         assertNotNull(document);
     }
 
@@ -57,10 +59,22 @@ public class ImportServiceImplTest extends AbstractSpringTest {
         String type = "reg";
         int year = 2013;
         int number = 1303;
-//        for(int i = 6; i<= 6; i++){
-        String document = importServiceImpl.getAknDocument(type, year, number);
+        String document = importServiceImpl.getAknActForYearAndNumber(type, year, number);
         assertNotNull(document);
-//            Thread.sleep(1000);
-//        }
+    }
+
+    @Test
+    public void test_getAknActs() {
+        String type = "reg";
+        int year = 2013;
+        importServiceImpl.getAknActsForYears(type, Arrays.asList(Integer.valueOf(year)));
+    }
+
+    @Test
+    public void test_importAll() {
+        String type = "reg";
+        int year = 2021;
+        List<String> document = importServiceImpl.getFormexActsForYears(type, Arrays.asList(Integer.valueOf(year)));
+        assertNotNull(document);
     }
 }
