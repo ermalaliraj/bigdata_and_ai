@@ -16,6 +16,7 @@ import org.springframework.web.client.RestOperations;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Component
@@ -38,12 +39,13 @@ public class OJDocumentProviderImpl implements OJDocumentProvider {
     @Override
     public String getActForYearAndNumber(String type, int year, int number) {
         try {
-            String jsonOJResponse = getActForYearAndNumberFromOJ(type, year, number);
+            Query query = SPARQLQueryCatalog.getActForYearAndNumber(type, year, number);
+            String jsonOJResponse = callOJ(query);
             String urlAct = getUrlAct(jsonOJResponse);
             String doc = null;
             if (urlAct != null) {
                 urlAct = urlAct + DOC_TYPE;
-                LOG.trace("CELLAR url: " + urlAct);
+                LOG.trace("CELLAR/OJ Act url: " + urlAct);
                 doc = restTemplate.getForObject(urlAct, String.class);
             }
             LOG.trace("Formex ACT from OJ: " + doc);
@@ -54,14 +56,15 @@ public class OJDocumentProviderImpl implements OJDocumentProvider {
     }
 
     @Override
-    public List<String> getAllActsForYears(String type, List<Integer> years) {
-        String jsonOJResponse = getUrlActsFromOJ(type, years);
+    public List<String> getAllActsForYear(String type, int year) {
+        Query query = SPARQLQueryCatalog.getAllActsForYears(type, Arrays.asList(year));
+        String jsonOJResponse = callOJ(query);
         List<String> urlActs = getUrlActs(jsonOJResponse);
         List<String> acts = new ArrayList<>();
         for (int i = 0; i < urlActs.size(); i++) {
             String url = urlActs.get(i);
             try {
-                LOG.trace(i + " - CELLAR url: " + url);
+                LOG.trace(i + " - CELLAR/OJ Act url: " + url);
                 if (url != null && url.length() > 0) {
                     String doc = restTemplate.getForObject(url, String.class);
                     LOG.trace("Formex ACT from OJ: " + doc);
@@ -69,45 +72,15 @@ public class OJDocumentProviderImpl implements OJDocumentProvider {
                 }
             } catch (Exception e) {
 //                throw new RuntimeException(String.format("Cannot get document from OJ for type {}, year {}, number {}, {}", type, years, i), e);
-                LOG.error("Cannot get document from OJ for type {}, year {}, i {}, error: {}", type, years, i, e.getMessage());
+                LOG.error("Cannot get document from OJ for type {}, year {}, i {}, error: {}", type, year, i, e.getMessage());
             }
         }
         return acts;
-
     }
 
-    private String getUrlActsFromOJ(String type, List<Integer> years) {
+    private String callOJ(Query query) {
         QueryEngineHTTP qexec = null;
         try {
-            Query query = SPARQLQueryCatalog.getAllActsForYears(type, years);
-
-            qexec = QueryExecutionFactory.createServiceRequest(ojUrl, query);
-            qexec.addDefaultGraph("");
-            qexec.addParam("debug", PARAM_DEBUG_VALUE);
-            qexec.addParam("timeout", String.valueOf(PARAM_TIMEOUT_VALUE));
-            qexec.addParam("format", PARAM_FORMAT_VALUE);
-            qexec.setTimeout(PARAM_TIMEOUT_VALUE, PARAM_TIMEOUT_VALUE);
-
-            LOG.trace("OJ Sparql URL: " + ojUrl);
-            LOG.trace("OJ Sparql Query: \n{}", qexec.getQuery().toString(qexec.getQuery().getSyntax()));
-            ResultSet results = qexec.execSelect();
-            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            ResultSetFormatter.outputAsJSON(outputStream, results);
-            String json = new String(outputStream.toByteArray());
-            LOG.trace("OJ Sparql Response as json: \n{}", json);
-            return json;
-        } finally {
-            if (qexec != null) {
-                qexec.close();
-            }
-        }
-    }
-
-    private String getActForYearAndNumberFromOJ(String type, int year, int number) {
-        QueryEngineHTTP qexec = null;
-        try {
-            Query query = SPARQLQueryCatalog.getActForYearAndNumber(type, year, number);
-
             qexec = QueryExecutionFactory.createServiceRequest(ojUrl, query);
             qexec.addDefaultGraph("");
             qexec.addParam("debug", PARAM_DEBUG_VALUE);

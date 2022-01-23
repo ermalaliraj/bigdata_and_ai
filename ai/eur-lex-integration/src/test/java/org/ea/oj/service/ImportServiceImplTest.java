@@ -19,8 +19,6 @@ import org.junit.Test;
 import org.springframework.web.client.RestTemplate;
 
 import javax.xml.transform.Transformer;
-
-import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertNotNull;
@@ -28,9 +26,7 @@ import static org.junit.Assert.assertNotNull;
 public class ImportServiceImplTest extends AbstractSpringTest {
 
     private Transformer transformer;
-
     private ConversionHelper conversionHelper;
-
     private RestTemplate restTemplate;
     private OJDocumentProvider ojDocumentProvider;
     private ImportService importServiceImpl;
@@ -46,35 +42,36 @@ public class ImportServiceImplTest extends AbstractSpringTest {
     }
 
     @Test
-    public void test_getFormexDocument() {
+    public void test_getAct_formexFormat() {
         String type = "reg";
-        int year = 2021;
-        int number = 467;
+        int year = 2016;
+        int number = 679; //GDPR
         String document = importServiceImpl.getFormexActForYearAndNumber(type, year, number);
         assertNotNull(document);
     }
 
     @Test
-    public void test_getAknDocument() {
+    public void test_getAct_akomaNtosoFormat() {
         String type = "reg";
-        int year = 2013;
-        int number = 1303;
+        int year = 2016;
+        int number = 679;
         String document = importServiceImpl.getAknActForYearAndNumber(type, year, number);
         assertNotNull(document);
     }
 
     @Test
-    public void test_getAknActs() {
+    public void test_getAllActsForYear_formexFormat() {
         String type = "reg";
-        int year = 2013;
-        importServiceImpl.getAknActsForYears(type, Arrays.asList(Integer.valueOf(year)));
+        int year = 2021;
+        List<String> document = importServiceImpl.getFormexActsForYear(type, year);
+        assertNotNull(document);
     }
 
     @Test
-    public void test_importAll() {
+    public void test_getAllActForYear_akomaNtosoFormat() {
         String type = "reg";
-        int year = 2021;
-        List<String> document = importServiceImpl.getFormexActsForYears(type, Arrays.asList(Integer.valueOf(year)));
-        assertNotNull(document);
+        int year = 2020;
+        importServiceImpl.getAknActsForYears(type, year);
     }
+
 }

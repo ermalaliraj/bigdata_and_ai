@@ -32,8 +32,8 @@ class ImportServiceImpl implements ImportService {
     }
 
     @Override
-    public List<String> getFormexActsForYears(String type, List<Integer> years) {
-        return ojDocumentProvider.getAllActsForYears(type, years);
+    public List<String> getFormexActsForYear(String type, int year) {
+        return ojDocumentProvider.getAllActsForYear(type, year);
     }
 
     @Override
@@ -56,20 +56,20 @@ class ImportServiceImpl implements ImportService {
     }
 
     @Override
-    public List<String> getAknActsForYears(String type, List<Integer> years) {
+    public List<String> getAknActsForYears(String type, int year) {
         String aknDocument;
-        List<String> formexActs = getFormexActsForYears("", years);
+        List<String> formexActsForYear = getFormexActsForYear(type, year);
 
-        for (int i = 0; i < formexActs.size(); i++) {
+        for (int i = 0; i < formexActsForYear.size(); i++) {
             try {
-                String fileName = OJ_OUTPUT_PATH + type + "_Act_" + i;
-                aknDocument = conversionHelper.convertFormexToAKN(formexActs.get(i));
+                String fileName = OJ_OUTPUT_PATH + type + "_" + year + "_"  + i;
+                aknDocument = conversionHelper.convertFormexToAKN(formexActsForYear.get(i));
                 FileUtils.writeByteArrayToFile(new File(fileName + "_akn.xml"), aknDocument.getBytes(StandardCharsets.UTF_8));
             } catch (Exception e) {
-                throw new RuntimeException(String.format("Cannot create AKN file for Act {}", formexActs), e);
+                throw new RuntimeException(String.format("Cannot create AKN file for Act {}", formexActsForYear), e);
             }
         }
-        return formexActs;
+        return formexActsForYear;
     }
 
 }

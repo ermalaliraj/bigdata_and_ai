@@ -70,7 +70,7 @@ Use the postfix `/zip` do download the full Act or `/DOC_2` for the Legal Text. 
 [http://publications.europa.eu/resource/cellar/c6b2f374-231f-47e0-a846-d23b9375af12.0003.01](http://publications.europa.eu/resource/cellar/c6b2f374-231f-47e0-a846-d23b9375af12.0003.01)
  
  
-### Find all Acts
+### Get documents in Official Journal
 ```
 PREFIX cdm: <http://publications.europa.eu/ontology/cdm#>
 SELECT distinct ?OJ ?title_ group_concat(distinct ?author; separator=",") as ?authors ?date_document ?manif_fmx4 ?fmx4_to_download
@@ -93,9 +93,13 @@ WHERE
 	}
 	BIND(IF(BOUND(?title),?title,'The Official Journal does not exist in that language'@en) as ?title_)
 	BIND(IF(BOUND(?manif_fmx4),IRI(concat(?manif_fmx4,"/zip")),"") as ?fmx4_to_download)
-}order by ?date_document
+} order by ?date_document
+limit 100
+```
 
+### Get all ELI resources
 
+```
 PREFIX cdm: <http://publications.europa.eu/ontology/cdm#>
 SELECT distinct ?fmx4_act 
 WHERE 
@@ -115,7 +119,7 @@ WHERE
 			}
 	}
 	BIND(IF(BOUND(?manif_fmx4),IRI(concat(?manif_fmx4,"/DOC_2")),"") as ?fmx4_act)
-}
+} limit 100
 ```
  
 ### Links 

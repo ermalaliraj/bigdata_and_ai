@@ -6,10 +6,10 @@ public interface ImportService {
 
     String getFormexActForYearAndNumber(String type, int year, int number);
 
-    List<String> getFormexActsForYears(String type, List<Integer> years);
+    List<String> getFormexActsForYear(String type, int year);
 
     String getAknActForYearAndNumber(String type, int year, int number);
 
-    List<String> getAknActsForYears(String type, List<Integer> years);
+    List<String> getAknActsForYears(String type, int year);
 
 }

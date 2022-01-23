@@ -65,7 +65,7 @@ public class SPARQLQueryCatalog {
                         "\t\t\t}\n" +
                         "\t}\n" +
                         "\tBIND(IF(BOUND(?manif_fmx4),IRI(concat(?manif_fmx4,\"/DOC_2\")),\"\") as ?fmx4_act)\n" +
-                        "} limit 100");
+                        "} limit 300");
         return queryStr.asQuery();
     }
 }
