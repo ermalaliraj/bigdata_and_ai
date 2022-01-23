@@ -1,4 +1,4 @@
-package org.ea.oj.service;
+package org.ea.oj.repository;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -7,6 +7,7 @@ import org.apache.jena.query.QueryExecutionFactory;
 import org.apache.jena.query.ResultSet;
 import org.apache.jena.query.ResultSetFormatter;
 import org.apache.jena.sparql.engine.http.QueryEngineHTTP;
+import org.ea.oj.dto.ActOJDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,6 @@ import org.springframework.web.client.RestOperations;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Component
@@ -56,26 +56,26 @@ public class OJDocumentProviderImpl implements OJDocumentProvider {
     }
 
     @Override
-    public List<String> getAllActsForYear(String type, int year) {
-        Query query = SPARQLQueryCatalog.getAllActsForYears(type, Arrays.asList(year));
+    public List<ActOJDto> getAllActsForYear(String type, int year) {
+        Query query = SPARQLQueryCatalog.getAllActsForYear(type, year);
         String jsonOJResponse = callOJ(query);
-        List<String> urlActs = getUrlActs(jsonOJResponse);
-        List<String> acts = new ArrayList<>();
+        List<ActOJDto> urlActs = buildActDto(jsonOJResponse);
         for (int i = 0; i < urlActs.size(); i++) {
-            String url = urlActs.get(i);
+            ActOJDto actOJDto = urlActs.get(i);
+            String url = actOJDto.getUrlActFormex();
             try {
                 LOG.trace(i + " - CELLAR/OJ Act url: " + url);
                 if (url != null && url.length() > 0) {
                     String doc = restTemplate.getForObject(url, String.class);
                     LOG.trace("Formex ACT from OJ: " + doc);
-                    acts.add(doc);
+                    actOJDto.setActFormex(doc);
                 }
             } catch (Exception e) {
 //                throw new RuntimeException(String.format("Cannot get document from OJ for type {}, year {}, number {}, {}", type, years, i), e);
                 LOG.error("Cannot get document from OJ for type {}, year {}, i {}, error: {}", type, year, i, e.getMessage());
             }
         }
-        return acts;
+        return urlActs;
     }
 
     private String callOJ(Query query) {
@@ -115,8 +115,8 @@ public class OJDocumentProviderImpl implements OJDocumentProvider {
         return uriDocument;
     }
 
-    private List<String> getUrlActs(String json) {
-        List<String> urlActs = new ArrayList<>();
+    private List<ActOJDto> buildActDto(String json) {
+        List<ActOJDto> urlActs = new ArrayList<>();
         ObjectMapper mapper = new ObjectMapper();
         JsonNode rootNode = null;
         try {
@@ -127,12 +127,24 @@ public class OJDocumentProviderImpl implements OJDocumentProvider {
 
         JsonNode bindings = rootNode.get("results").get("bindings");
         for (int i = 0; i < bindings.size(); i++) {
-            JsonNode fmx4_act = bindings.get(i).get("fmx4_act");
-            if (fmx4_act != null && fmx4_act.size() > 0 && fmx4_act.get("value") != null) {
-                urlActs.add(fmx4_act.get("value").textValue());
-            }
+            JsonNode row = bindings.get(i);
+            ActOJDto actOJDto = new ActOJDto();
+            actOJDto.setOjNr(getValue(row.get("callret-0")));
+            actOJDto.setOjSeq(getValue(row.get("callret-1")));
+            actOJDto.setDateDocument(getValue(row.get("date_document")));
+            actOJDto.setOjLink(getValue(row.get("OJ")));
+            actOJDto.setUrlActFormex(getValue(row.get("fmx4_act")));
+            urlActs.add(actOJDto);
         }
         return urlActs;
+    }
+
+    private String getValue(JsonNode jsonNode) {
+        String val = "";
+        if (jsonNode != null && jsonNode.get("value") != null) {
+            val = jsonNode.get("value").textValue();
+        }
+        return val;
     }
 
 }

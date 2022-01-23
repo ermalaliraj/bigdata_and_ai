@@ -1,6 +1,9 @@
 package org.ea.oj.service;
 
 import org.apache.commons.io.FileUtils;
+import org.ea.oj.dto.ActOJDto;
+import org.ea.oj.repository.OJDocumentProvider;
+import org.ea.oj.transformer.ConversionHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +35,7 @@ class ImportServiceImpl implements ImportService {
     }
 
     @Override
-    public List<String> getFormexActsForYear(String type, int year) {
+    public List<ActOJDto> getFormexActsForYear(String type, int year) {
         return ojDocumentProvider.getAllActsForYear(type, year);
     }
 
@@ -56,19 +59,23 @@ class ImportServiceImpl implements ImportService {
     }
 
     @Override
-    public List<String> getAknActsForYears(String type, int year) {
+    public List<ActOJDto> getAknActsForYear(String type, int year) {
         String aknDocument;
-        List<String> formexActsForYear = getFormexActsForYear(type, year);
+        List<ActOJDto> formexActsForYear = getFormexActsForYear(type, year);
 
-        for (int i = 0; i < formexActsForYear.size(); i++) {
+        int i;
+        for (i = 0; i < formexActsForYear.size(); i++) {
             try {
-                String fileName = OJ_OUTPUT_PATH + type + "_" + year + "_"  + i;
-                aknDocument = conversionHelper.convertFormexToAKN(formexActsForYear.get(i));
+                ActOJDto actOJDto = formexActsForYear.get(i);
+                String fileName = OJ_OUTPUT_PATH + type + "_" + year + "_nr-" + actOJDto.getOjNr() + "_seq-" + actOJDto.getOjSeq();
+                aknDocument = conversionHelper.convertFormexToAKN(actOJDto.getActFormex());
                 FileUtils.writeByteArrayToFile(new File(fileName + "_akn.xml"), aknDocument.getBytes(StandardCharsets.UTF_8));
             } catch (Exception e) {
-                throw new RuntimeException(String.format("Cannot create AKN file for Act {}", formexActsForYear), e);
+//                throw new RuntimeException(String.format("Cannot create AKN file for Act {}", formexActsForYear.get(i).toString()), e);
+                LOG.error("Cannot create AKN file {} iteration, for Act {} , error: {}", i, formexActsForYear.get(i).toString(), e.getMessage());
             }
         }
+        LOG.error("Processed {} documents", i);
         return formexActsForYear;
     }
 

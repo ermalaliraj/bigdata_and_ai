@@ -1,18 +1,13 @@
-/*
- * Copyright 2017 European Commission
- *
- * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
- * You may not use this work except in compliance with the Licence.
- * You may obtain a copy of the Licence at:
- *
- *     https://joinup.ec.europa.eu/software/page/eupl
- *
- * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the Licence for the specific language governing permissions and limitations under the Licence.
- */
 package org.ea.oj.service;
 
+import org.apache.jena.query.Query;
+import org.apache.jena.query.QueryExecution;
+import org.apache.jena.query.QueryExecutionFactory;
+import org.apache.jena.query.QueryFactory;
+import org.ea.oj.dto.ActOJDto;
+import org.ea.oj.repository.OJDocumentProvider;
+import org.ea.oj.repository.OJDocumentProviderImpl;
+import org.ea.oj.transformer.ConversionHelper;
 import org.ea.util.SpringUtil;
 import org.junit.Before;
 import org.junit.Test;
@@ -63,15 +58,28 @@ public class ImportServiceImplTest extends AbstractSpringTest {
     public void test_getAllActsForYear_formexFormat() {
         String type = "reg";
         int year = 2021;
-        List<String> document = importServiceImpl.getFormexActsForYear(type, year);
+        List<ActOJDto> document = importServiceImpl.getFormexActsForYear(type, year);
         assertNotNull(document);
     }
 
     @Test
-    public void test_getAllActForYear_akomaNtosoFormat() {
+    public void test_getAllActsForYear_akomaNtosoFormat() {
         String type = "reg";
-        int year = 2020;
-        importServiceImpl.getAknActsForYears(type, year);
+        int year = 2016;
+        importServiceImpl.getAknActsForYear(type, year);
     }
 
+    @Test
+    public void compileSparql() {
+        String sparqlQueryString=
+                "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> \n"+
+                        "select substr(str(?sub),0,1) ?sub ?super (count(?mid) as ?length) where {\n"+
+                        "values ?sub { <http://dbpedia.org/ontology/Writer> }\n" +
+                        "?sub rdfs:subClassOf* ?mid .\n"+
+                        "?mid rdfs:subClassOf+ ?super .}\n"+
+                        "group by ?sub ?super\n"+
+                        "order by (?length)\n";
+        Query query = QueryFactory.create(sparqlQueryString);
+        QueryExecution qexec = QueryExecutionFactory.sparqlService("http://dbpedia.org/sparql",query);
+    }
 }

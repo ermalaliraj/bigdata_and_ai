@@ -1,15 +1,17 @@
 package org.ea.oj.service;
 
+import org.ea.oj.dto.ActOJDto;
+
 import java.util.List;
 
 public interface ImportService {
 
     String getFormexActForYearAndNumber(String type, int year, int number);
 
-    List<String> getFormexActsForYear(String type, int year);
+    List<ActOJDto> getFormexActsForYear(String type, int year);
 
     String getAknActForYearAndNumber(String type, int year, int number);
 
-    List<String> getAknActsForYears(String type, int year);
+    List<ActOJDto> getAknActsForYear(String type, int year);
 
 }
