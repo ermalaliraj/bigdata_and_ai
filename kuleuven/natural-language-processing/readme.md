@@ -16,6 +16,7 @@ docker logs -f -t
 
 ### Pre
 ```
+pip install --upgrade --user gensim
 pip install --user lexnlp
 ```
 
