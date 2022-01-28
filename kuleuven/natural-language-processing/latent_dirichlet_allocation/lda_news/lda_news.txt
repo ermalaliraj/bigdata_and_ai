@@ -1,0 +1,122 @@
+Nr documents:  9999
+                                       headline_text  index
+0  aba decides against community broadcasting lic...      0
+1     act fire witnesses must be aware of defamation      1
+2     a g calls for infrastructure protection summit      2
+3           air nz staff in aust strike for pay rise      3
+4      air nz strike to affect australian travellers      4
+
+processed_docs:
+ 0     [decid, communiti, broadcast, licenc]
+1                        [wit, awar, defam]
+2    [call, infrastructur, protect, summit]
+3               [staff, aust, strike, rise]
+4      [strike, affect, australian, travel]
+Name: headline_text, dtype: object
+
+indexed words:
+0 broadcast
+1 communiti
+2 decid
+3 licenc
+4 awar
+5 defam
+6 wit
+7 call
+8 infrastructur
+9 protect
+10 summit
+
+bow_corpus (token_id, token_count) tuples:
+[(0, 1), (1, 1)]
+[(2, 1)]
+[(3, 1), (4, 1), (5, 1)]
+[(6, 1), (7, 1), (8, 1), (9, 1)]
+[(9, 1), (10, 1), (11, 1), (12, 1)]
+[(13, 1)]
+[(14, 1), (15, 1)]
+[(16, 1), (17, 1), (18, 1), (19, 1)]
+[(6, 1), (20, 1), (21, 1), (22, 1), (23, 1)]
+[(24, 1)]
+
+bow_doc_4310:  [(89, 1), (135, 1), (158, 1), (319, 1), (427, 1)]
+Word 89 ("govt") appears 1 time.
+Word 135 ("group") appears 1 time.
+Word 158 ("vote") appears 1 time.
+Word 319 ("local") appears 1 time.
+Word 427 ("want") appears 1 time.
+
+bow_corpus tfidf
+[(0, 0.6441593273028555), (1, 0.7648913393735954)]
+[(2, 1.0)]
+[(3, 0.4932761135794379), (4, 0.60652266475221), (5, 0.6235454537672805)]
+[(6, 0.4553602844236257),
+ (7, 0.48681907160528554),
+ (8, 0.5682334062384365),
+ (9, 0.4824572508789422)]
+[(9, 0.4469065835125222),
+ (10, 0.552123329657659),
+ (11, 0.44178820246924777),
+ (12, 0.5479575883404629)]
+[(13, 1.0)]
+
+Running LDA using Bag of Words
+Topic: 0 Words: 0.015*"saddam" + 0.014*"look" + 0.012*"plan" + 0.012*"drug" + 0.011*"elect" + 0.011*"woman" + 0.011*"fall" + 0.010*"australia" + 0.010*"call" + 0.010*"warn"
+Topic: 1 Words: 0.056*"govt" + 0.017*"die" + 0.015*"deni" + 0.013*"tour" + 0.012*"iraq" + 0.011*"begin" + 0.011*"anti" + 0.010*"inquiri" + 0.010*"student" + 0.010*"injur"
+Topic: 2 Words: 0.041*"iraq" + 0.035*"troop" + 0.024*"protest" + 0.023*"anti" + 0.018*"iraqi" + 0.013*"forc" + 0.013*"minist" + 0.013*"chang" + 0.011*"ralli" + 0.009*"sydney"
+Topic: 3 Words: 0.024*"court" + 0.020*"iraq" + 0.020*"kill" + 0.018*"charg" + 0.016*"iraqi" + 0.016*"dead" + 0.014*"say" + 0.014*"report" + 0.014*"face" + 0.010*"battl"
+Topic: 4 Words: 0.025*"polic" + 0.024*"sar" + 0.016*"face" + 0.014*"rain" + 0.013*"work" + 0.012*"communiti" + 0.011*"health" + 0.011*"baghdad" + 0.010*"charg" + 0.010*"continu"
+Topic: 5 Words: 0.022*"say" + 0.020*"iraq" + 0.020*"death" + 0.020*"water" + 0.015*"hop" + 0.013*"charg" + 0.011*"howard" + 0.010*"titl" + 0.010*"fear" + 0.010*"govt"
+Topic: 6 Words: 0.051*"iraq" + 0.034*"polic" + 0.018*"miss" + 0.013*"fund" + 0.012*"meet" + 0.012*"help" + 0.012*"plan" + 0.011*"shoot" + 0.010*"fight" + 0.010*"kill"
+Topic: 7 Words: 0.037*"plan" + 0.019*"world" + 0.017*"say" + 0.016*"welcom" + 0.016*"council" + 0.015*"report" + 0.014*"iraq" + 0.011*"case" + 0.011*"baghdad" + 0.011*"match"
+Topic: 8 Words: 0.022*"take" + 0.015*"home" + 0.013*"china" + 0.012*"season" + 0.012*"start" + 0.011*"win" + 0.011*"sar" + 0.010*"break" + 0.010*"open" + 0.010*"baghdad"
+Topic: 9 Words: 0.034*"claim" + 0.031*"baghdad" + 0.024*"urg" + 0.024*"council" + 0.021*"iraqi" + 0.016*"north" + 0.016*"concern" + 0.016*"hospit" + 0.011*"protest" + 0.011*"group"
+
+Running LDA using TF-IDF
+Topic: 0 Word: 0.015*"injur" + 0.010*"trial" + 0.009*"plan" + 0.009*"north" + 0.009*"train" + 0.009*"hand" + 0.009*"kill" + 0.009*"sar" + 0.008*"confid" + 0.008*"iraq"
+Topic: 1 Word: 0.031*"iraq" + 0.016*"say" + 0.015*"death" + 0.014*"fund" + 0.011*"meet" + 0.009*"aust" + 0.009*"look" + 0.009*"children" + 0.009*"ban" + 0.009*"plan"
+Topic: 2 Word: 0.022*"troop" + 0.019*"baghdad" + 0.015*"continu" + 0.013*"forc" + 0.012*"advanc" + 0.011*"take" + 0.010*"chief" + 0.009*"say" + 0.009*"govt" + 0.009*"water"
+Topic: 3 Word: 0.024*"polic" + 0.016*"govt" + 0.012*"accus" + 0.012*"celebr" + 0.012*"drug" + 0.011*"case" + 0.011*"court" + 0.010*"hop" + 0.010*"state" + 0.009*"season"
+Topic: 4 Word: 0.017*"win" + 0.014*"warn" + 0.013*"hit" + 0.012*"lead" + 0.011*"shark" + 0.011*"probe" + 0.010*"fight" + 0.010*"toll" + 0.010*"nation" + 0.010*"match"
+Topic: 5 Word: 0.029*"charg" + 0.026*"face" + 0.025*"hospit" + 0.020*"return" + 0.018*"shoot" + 0.014*"polic" + 0.011*"put" + 0.010*"defend" + 0.009*"final" + 0.009*"destroy"
+Topic: 6 Word: 0.025*"iraq" + 0.014*"saddam" + 0.014*"urg" + 0.013*"world" + 0.012*"marin" + 0.012*"dead" + 0.012*"victori" + 0.011*"clear" + 0.011*"australia" + 0.010*"public"
+Topic: 7 Word: 0.035*"baghdad" + 0.016*"open" + 0.015*"kill" + 0.014*"iraqi" + 0.011*"sar" + 0.010*"raid" + 0.010*"airport" + 0.009*"journalist" + 0.009*"mayor" + 0.009*"market"
+Topic: 8 Word: 0.016*"plan" + 0.016*"england" + 0.015*"test" + 0.013*"player" + 0.011*"industri" + 0.011*"claim" + 0.011*"strike" + 0.010*"home" + 0.010*"hold" + 0.010*"island"
+Topic: 9 Word: 0.027*"protest" + 0.020*"anti" + 0.019*"sar" + 0.019*"iraq" + 0.018*"deni" + 0.015*"report" + 0.014*"iraqi" + 0.011*"suicid" + 0.010*"clash" + 0.010*"play"
+
+processed_docs[4310] ['ratepay', 'group', 'want', 'compulsori', 'local', 'govt', 'vote']
+Performance evaluation by classifying LDA Bag of Words model
+Score: 0.8499660491943359	 - Topic: 0.056*"govt" + 0.017*"die" + 0.015*"deni" + 0.013*"tour" + 0.012*"iraq" + 0.011*"begin" + 0.011*"anti" + 0.010*"inquiri" + 0.010*"student" + 0.010*"injur"
+Score: 0.01667623408138752	 - Topic: 0.022*"say" + 0.020*"iraq" + 0.020*"death" + 0.020*"water" + 0.015*"hop" + 0.013*"charg" + 0.011*"howard" + 0.010*"titl" + 0.010*"fear" + 0.010*"govt"
+Score: 0.016673116013407707	 - Topic: 0.034*"claim" + 0.031*"baghdad" + 0.024*"urg" + 0.024*"council" + 0.021*"iraqi" + 0.016*"north" + 0.016*"concern" + 0.016*"hospit" + 0.011*"protest" + 0.011*"group"
+Score: 0.01667056605219841	 - Topic: 0.022*"take" + 0.015*"home" + 0.013*"china" + 0.012*"season" + 0.012*"start" + 0.011*"win" + 0.011*"sar" + 0.010*"break" + 0.010*"open" + 0.010*"baghdad"
+Score: 0.016669968143105507	 - Topic: 0.037*"plan" + 0.019*"world" + 0.017*"say" + 0.016*"welcom" + 0.016*"council" + 0.015*"report" + 0.014*"iraq" + 0.011*"case" + 0.011*"baghdad" + 0.011*"match"
+Score: 0.016669772565364838	 - Topic: 0.025*"polic" + 0.024*"sar" + 0.016*"face" + 0.014*"rain" + 0.013*"work" + 0.012*"communiti" + 0.011*"health" + 0.011*"baghdad" + 0.010*"charg" + 0.010*"continu"
+Score: 0.016669169068336487	 - Topic: 0.041*"iraq" + 0.035*"troop" + 0.024*"protest" + 0.023*"anti" + 0.018*"iraqi" + 0.013*"forc" + 0.013*"minist" + 0.013*"chang" + 0.011*"ralli" + 0.009*"sydney"
+Score: 0.016668757423758507	 - Topic: 0.015*"saddam" + 0.014*"look" + 0.012*"plan" + 0.012*"drug" + 0.011*"elect" + 0.011*"woman" + 0.011*"fall" + 0.010*"australia" + 0.010*"call" + 0.010*"warn"
+Score: 0.01666865311563015	 - Topic: 0.051*"iraq" + 0.034*"polic" + 0.018*"miss" + 0.013*"fund" + 0.012*"meet" + 0.012*"help" + 0.012*"plan" + 0.011*"shoot" + 0.010*"fight" + 0.010*"kill"
+Score: 0.016667764633893967	 - Topic: 0.024*"court" + 0.020*"iraq" + 0.020*"kill" + 0.018*"charg" + 0.016*"iraqi" + 0.016*"dead" + 0.014*"say" + 0.014*"report" + 0.014*"face" + 0.010*"battl"
+
+Performance evaluation by classifying LDA TF-IDF model
+Score: 0.8499559760093689	 - Topic: 0.035*"baghdad" + 0.016*"open" + 0.015*"kill" + 0.014*"iraqi" + 0.011*"sar" + 0.010*"raid" + 0.010*"airport" + 0.009*"journalist" + 0.009*"mayor" + 0.009*"market"
+Score: 0.016678057610988617	 - Topic: 0.017*"win" + 0.014*"warn" + 0.013*"hit" + 0.012*"lead" + 0.011*"shark" + 0.011*"probe" + 0.010*"fight" + 0.010*"toll" + 0.010*"nation" + 0.010*"match"
+Score: 0.016673466190695763	 - Topic: 0.029*"charg" + 0.026*"face" + 0.025*"hospit" + 0.020*"return" + 0.018*"shoot" + 0.014*"polic" + 0.011*"put" + 0.010*"defend" + 0.009*"final" + 0.009*"destroy"
+Score: 0.016672391444444656	 - Topic: 0.024*"polic" + 0.016*"govt" + 0.012*"accus" + 0.012*"celebr" + 0.012*"drug" + 0.011*"case" + 0.011*"court" + 0.010*"hop" + 0.010*"state" + 0.009*"season"
+Score: 0.016671091318130493	 - Topic: 0.027*"protest" + 0.020*"anti" + 0.019*"sar" + 0.019*"iraq" + 0.018*"deni" + 0.015*"report" + 0.014*"iraqi" + 0.011*"suicid" + 0.010*"clash" + 0.010*"play"
+Score: 0.01667104847729206	 - Topic: 0.015*"injur" + 0.010*"trial" + 0.009*"plan" + 0.009*"north" + 0.009*"train" + 0.009*"hand" + 0.009*"kill" + 0.009*"sar" + 0.008*"confid" + 0.008*"iraq"
+Score: 0.01667001098394394	 - Topic: 0.022*"troop" + 0.019*"baghdad" + 0.015*"continu" + 0.013*"forc" + 0.012*"advanc" + 0.011*"take" + 0.010*"chief" + 0.009*"say" + 0.009*"govt" + 0.009*"water"
+Score: 0.016669537872076035	 - Topic: 0.025*"iraq" + 0.014*"saddam" + 0.014*"urg" + 0.013*"world" + 0.012*"marin" + 0.012*"dead" + 0.012*"victori" + 0.011*"clear" + 0.011*"australia" + 0.010*"public"
+Score: 0.016669336706399918	 - Topic: 0.031*"iraq" + 0.016*"say" + 0.015*"death" + 0.014*"fund" + 0.011*"meet" + 0.009*"aust" + 0.009*"look" + 0.009*"children" + 0.009*"ban" + 0.009*"plan"
+Score: 0.016669102013111115	 - Topic: 0.016*"plan" + 0.016*"england" + 0.015*"test" + 0.013*"player" + 0.011*"industri" + 0.011*"claim" + 0.011*"strike" + 0.010*"home" + 0.010*"hold" + 0.010*"island"
+
+Testing model on unseen document
+Score: 0.6999655961990356	 Topic: 0.056*"govt" + 0.017*"die" + 0.015*"deni" + 0.013*"tour" + 0.012*"iraq"
+Score: 0.033340148627758026	 Topic: 0.037*"plan" + 0.019*"world" + 0.017*"say" + 0.016*"welcom" + 0.016*"council"
+Score: 0.03333894908428192	 Topic: 0.015*"saddam" + 0.014*"look" + 0.012*"plan" + 0.012*"drug" + 0.011*"elect"
+Score: 0.033338867127895355	 Topic: 0.025*"polic" + 0.024*"sar" + 0.016*"face" + 0.014*"rain" + 0.013*"work"
+Score: 0.033338457345962524	 Topic: 0.022*"take" + 0.015*"home" + 0.013*"china" + 0.012*"season" + 0.012*"start"
+Score: 0.033338017761707306	 Topic: 0.022*"say" + 0.020*"iraq" + 0.020*"death" + 0.020*"water" + 0.015*"hop"
+Score: 0.033335864543914795	 Topic: 0.024*"court" + 0.020*"iraq" + 0.020*"kill" + 0.018*"charg" + 0.016*"iraqi"
+Score: 0.03333491459488869	 Topic: 0.034*"claim" + 0.031*"baghdad" + 0.024*"urg" + 0.024*"council" + 0.021*"iraqi"
+Score: 0.033334679901599884	 Topic: 0.051*"iraq" + 0.034*"polic" + 0.018*"miss" + 0.013*"fund" + 0.012*"meet"
+Score: 0.03333447128534317	 Topic: 0.041*"iraq" + 0.035*"troop" + 0.024*"protest" + 0.023*"anti" + 0.018*"iraqi"

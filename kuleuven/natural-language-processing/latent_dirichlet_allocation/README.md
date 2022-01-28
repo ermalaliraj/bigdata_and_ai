@@ -45,10 +45,19 @@ The probability we get the same article is very low, but we choose the closest t
 ### 
 <img src="./doc/lda_generation_map.JPG" width="80%" height="auto">
 
+
+
+```  
+pip install --user pyldavis
+pip install --user spacy
+python -m spacy download en   # now you can spacy.load('en_core_web_sm')
+```
+
 ### Links 
 - [Video Tutorial](https://www.youtube.com/watch?v=T05t-SqKArY&t=822s)
 - [LDA news headlines by Susan Li](https://towardsdatascience.com/topic-modeling-and-latent-dirichlet-allocation-in-python-9bf156893c24)
 - [LDA news headlines github](https://github.com/susanli2016/NLP-with-Python/blob/master/LDA_news_headlines.ipynb)
+- [Introduction to LDA](http://blog.echen.me/2011/08/22/introduction-to-latent-dirichlet-allocation/)
 
 
 ###

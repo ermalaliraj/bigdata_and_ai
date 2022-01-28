@@ -1,4 +1,0 @@
-pandas
-sklearn
-nltk
-lexnlp

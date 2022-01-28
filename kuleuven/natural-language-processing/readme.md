@@ -11,7 +11,6 @@ docker exec -it 98554f69b578  bash
 docker logs -f 6c7e9287b519
 docker logs -f -t
 
-
 ```
 
 ### Pre
