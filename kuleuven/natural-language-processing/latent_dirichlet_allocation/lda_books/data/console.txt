@@ -1,0 +1,20 @@
+
+stopwords:  ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', "you're", "you've", "you'll", "you'd", 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', "she's", 'her', 'hers', 'herself', 'it', "it's", 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', "that'll", 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', "don't", 'should', "should've", 'now', 'd', 'll', 'm', 'o', 're', 've', 'y', 'ain', 'aren', "aren't", 'couldn', "couldn't", 'didn', "didn't", 'doesn', "doesn't", 'hadn', "hadn't", 'hasn', "hasn't", 'haven', "haven't", 'isn', "isn't", 'ma', 'mightn', "mightn't", 'mustn', "mustn't", 'needn', "needn't", 'shan', "shan't", 'shouldn', "shouldn't", 'wasn', "wasn't", 'weren', "weren't", 'won', "won't", 'wouldn', "wouldn't"]
+
+data size:  252
+data[0][0:90]:   My name David Kochalski. I was born in a small town called , and I was born May 5, 1928. 
+
+lemmatized_texts size:  252
+lemmatized_texts[0][0:90]:  name bear small town call bear well very hard work child father mother small mill flour bu
+
+data_words size:  252
+data_words[0][0:20]:  ['name', 'bear', 'small', 'town', 'call', 'bear', 'well', 'very', 'hard', 'work', 'child', 'father', 'mother', 'small', 'mill', 'flour', 'buckwheat', 'prosperous', 'comfortable', 'go']
+
+id2word size:  15438
+id2word[[0][:1][0]]:  able
+
+corpus size:  252
+corpus[0][0:20]:  [(0, 2), (1, 10), (2, 1), (3, 2), (4, 1), (5, 2), (6, 1), (7, 2), (8, 3), (9, 1), (10, 12), (11, 1), (12, 8), (13, 1), (14, 2), (15, 1), (16, 3), (17, 2), (18, 1), (19, 2)]
+
+Corpus data saved in:  ./model/lda_books_model_corpus.dat
+Model saved in:  ./model/lda_books_model.dat

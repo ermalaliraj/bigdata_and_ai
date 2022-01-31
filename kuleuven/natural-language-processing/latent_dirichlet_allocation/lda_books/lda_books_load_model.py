@@ -30,7 +30,7 @@ corpus = deserializeFile('./model/lda_books_model_corpus.dat')
 print("Loaded model and corpus data. Preparing visualisation... ")
 
 show_topics(lda_model, 5)
-#
-# visualisation = gensimvis.prepare(lda_model, corpus, lda_model.id2word, mds="mmds", R=30)
-# pyLDAvis.save_html(visualisation, 'LDA_books_topics_visualization.html')
-# print("Created Visualization file: LDA_books_topics_visualization.html")
+
+visualisation = gensimvis.prepare(lda_model, corpus, lda_model.id2word, mds="mmds", R=30)
+pyLDAvis.save_html(visualisation, 'LDA_books_topics_visualization.html')
+print("Created Visualization file: LDA_books_topics_visualization.html")
