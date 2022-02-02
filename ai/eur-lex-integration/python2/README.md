@@ -6,7 +6,7 @@
 
 ### 2. See the Topics distribution using gensimvis
 `load_model_and_showTopicsWithGensimvis.py`
-<img src="./doc/topics_with_gensimvis.JPG" width="60%" height="auto">
+<img src="./doc/topics_with_gensimvis.JPG" width="90%" height="auto">
 
 ### 2. Run LDA Topic clustering and DBSCAN
 `load_model_and_DBSCAN.py`
