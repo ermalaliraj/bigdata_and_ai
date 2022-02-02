@@ -1,0 +1,44 @@
+Loading  ./model/lda_books_model.dat
+Loading  ./model/lda_books_model_corpus.dat
+Loaded Regulations model and corpus data.
+
+First 5 topics:
+(0, '0.035*"digital" + 0.032*"right" + 0.031*"term" + 0.026*"long" + 0.025*"capacity"')
+(1, '0.000*"datum" + 0.000*"cabinet" + 0.000*"blast" + 0.000*"chill" + 0.000*"celsius"')
+(2, '0.219*"datum" + 0.104*"personal" + 0.092*"processing" + 0.059*"subject" + 0.052*"authority"')
+(3, '0.090*"dioxide" + 0.088*"titanium" + 0.075*"product" + 0.049*"cosmetic" + 0.032*"use"')
+
+Total topics 100. Printing first 5:
+['digital', 'right', 'term', 'long', 'capacity']
+['datum', 'cabinet', 'blast', 'chill', 'celsius']
+['datum', 'personal', 'processing', 'subject', 'authority']
+['dioxide', 'titanium', 'product', 'cosmetic', 'use']
+['accordance', 'animal', 'celsius', 'blast', 'chill']
+
+Preparing visualisation...
+Created Visualization file: LDA_Regulation_topics.html
+
+Checking 100 topics loaded from the model
+Total words in topics  500
+Re-build corpus concatenating all 1860 words sorted by words.index
+Generated 229 tokens
+word_vectors from tokens (229, 96)
+Perform DBSCAN clustering from vector array or distance matrix. :-
+DBSCAN labels :  [-1 -1 -1  0  0  0  0  0 -1 -1  0 -1  0  0  0  0  0 -1 -1  0  0  0  0  0
+ -1  0  0  0  0  0  0  0  0 -1 -1 -1 -1  0  0  0  0 -1 -1 -1 -1 -1 -1  0
+  0  0  0  0  0 -1 -1 -1 -1 -1  0  0  0  0 -1 -1 -1 -1 -1 -1 -1 -1 -1  0
+ -1  0 -1 -1 -1  0 -1  0  0  0 -1 -1 -1  0  0  0  0  0  0  0  0  0  0 -1
+  0 -1  0  0  0  0  0  0  0  0  0  0 -1 -1  0  0 -1 -1 -1 -1 -1  0 -1  0
+  0  0 -1 -1 -1 -1 -1  0  0 -1  0  0  0 -1 -1 -1  0 -1 -1  0  0 -1 -1  0
+  0  0  0  0 -1  0  0 -1 -1 -1  0  0 -1 -1 -1 -1  0 -1 -1 -1 -1  0  0  0
+  0  0  0  0  0  0 -1 -1  0  0  0  0  0 -1 -1  0  0 -1 -1 -1 -1 -1 -1 -1
+  0  0 -1  0  0 -1 -1 -1 -1  0 -1 -1  0  0 -1 -1 -1 -1 -1  0 -1 -1 -1  0
+  0  0  0  0 -1  0  0 -1 -1 -1  0  0 -1]
+test_tokens:  glandless international technology program
+word_vectors from tokens (229, 96)
+Label for glandless:-1
+Label for international:-1
+Label for technology:-1
+Label for program:-1
+
+Process finished with exit code 0

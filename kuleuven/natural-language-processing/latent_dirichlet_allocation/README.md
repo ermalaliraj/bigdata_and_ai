@@ -58,6 +58,7 @@ python -m spacy download en   # now you can spacy.load('en_core_web_sm')
 - [LDA news headlines by Susan Li](https://towardsdatascience.com/topic-modeling-and-latent-dirichlet-allocation-in-python-9bf156893c24)
 - [LDA news headlines github](https://github.com/susanli2016/NLP-with-Python/blob/master/LDA_news_headlines.ipynb)
 - [Introduction to LDA](http://blog.echen.me/2011/08/22/introduction-to-latent-dirichlet-allocation/)
+https://www.youtube.com/watch?v=1_jq_gWFUuQ
 
 
 ###
