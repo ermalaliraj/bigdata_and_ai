@@ -4,6 +4,8 @@ import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 import spacy
+import pyLDAvis
+import pyLDAvis.gensim_models as gensimvis
 from gensim.parsing.preprocessing import preprocess_string, strip_punctuation, strip_numeric
 from sklearn.cluster import DBSCAN
 
@@ -41,10 +43,10 @@ print("Loaded Regulations model and corpus data.")
 
 topics = show_topics(lda_model, 5)
 
-# print("Preparing visualisation... ")
-# visualisation = gensimvis.prepare(lda_model, corpus, lda_model.id2word, mds="mmds", R=30)
-# pyLDAvis.save_html(visualisation, 'LDA_Regulation_topics.html')
-# print("Created Visualization file: LDA_Regulation_topics.html")
+print("Preparing visualisation... ")
+visualisation = gensimvis.prepare(lda_model, corpus, lda_model.id2word, mds="mmds", R=30)
+pyLDAvis.save_html(visualisation, 'LDA_Regulation_topics.html')
+print("Created Visualization file: LDA_Regulation_topics.html")
 
 print("\nChecking {} topics loaded from the model".format(len(topics)))
 corpus = [j for i in topics for j in i]
@@ -71,7 +73,6 @@ print("DBSCAN labels with the word_vectors: \n", dbscan.labels_)
 def dbscan_predict(model, X):
     nr_samples = X.shape[0]
     y_new = np.ones(shape=nr_samples, dtype=int) * -1
-
     for i in range(nr_samples):
         diff = model.components_ - X[i, :]  # NumPy broadcasting
         dist = np.linalg.norm(diff, axis=1)  # Euclidean distance
