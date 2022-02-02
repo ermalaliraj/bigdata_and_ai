@@ -135,7 +135,7 @@ class LinkedInBot:
 
 if __name__ == "__main__":
     email = "ermal.aliraj@gmail.com"  # your linkedin username/email
-    password = "astalavista23"  # your linkedin password  (DON'T panic! No requests will be sent on your name)
+    password = "xxxxx"  # your linkedin password  (DON'T panic! No requests will be sent on your name)
     jobTitle = "Data Scientist"
     location = "Canada"
 
