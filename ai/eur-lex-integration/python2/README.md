@@ -1,3 +1,14 @@
+# LDA for OJ Regulations download form EUR-Lex
+
+
+### 1. Build the model 
+`load_data_and_create_LDA.py`
+
+### 2. Run load_model_and_DBSCAN.py
+
+<img src="./doc/dbscan.png" width="60%" height="auto">
+
+```
 Loading  ./model/lda_books_model.dat
 Loading  ./model/lda_books_model_corpus.dat
 Loaded Regulations model and corpus data.
@@ -49,3 +60,13 @@ Label for glandless:-1
 Label for international:-1
 Label for technology:-1
 Label for program:-1
+```
+
+
+ 
+### Links 
+- [EUR-lex](https://eur-lex.europa.eu/content/welcome/about.html)
+
+
+###
+- [Back to bigdata_and_ai](https://github.com/ermalaliraj/bigdata_and_ai) 

@@ -3,8 +3,6 @@ import pickle
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
-import pyLDAvis
-import pyLDAvis.gensim_models as gensimvis
 import spacy
 from gensim.parsing.preprocessing import preprocess_string, strip_punctuation, strip_numeric
 from sklearn.cluster import DBSCAN
@@ -28,12 +26,14 @@ def show_topics(lda_model, num_words=5):
     print("\nTotal topics " + str(len(topics)) + ". Printing first 5:", *topics[0:5], sep='\n')
     return topics
 
+
 def tag_to_vector(tokens):
     word_vectors = []
     for i in tokens:
         word_vectors.append(i.vector)
     word_vectors = np.array(word_vectors)
     return word_vectors
+
 
 lda_model = deserializeFile('./model/lda_books_model.dat')
 corpus = deserializeFile('./model/lda_books_model_corpus.dat')
@@ -67,6 +67,7 @@ print("\nPerform DBSCAN clustering from vector array or distance matrix. :- ")
 dbscan = DBSCAN(metric='cosine', eps=0.3, min_samples=5).fit(word_vectors)
 print("DBSCAN labels with the word_vectors: \n", dbscan.labels_)
 
+
 def dbscan_predict(model, X):
     nr_samples = X.shape[0]
     y_new = np.ones(shape=nr_samples, dtype=int) * -1
@@ -82,20 +83,19 @@ def dbscan_predict(model, X):
 
 test_words = ' '.join(['glandless', 'international', 'technology', 'program']).replace('-', ' ')
 test_tokens = nlp(test_words)
-print("\ttest_tokens: ", test_tokens)
+test_vectors = tag_to_vector(test_tokens)
+print("\ntest_tokens: ", test_tokens)
+print("test_vectors from test_tokens[4x9] instead of 229x96\n", test_vectors[0:4, 0:5])
 
-test_vectors = tag_to_vector(tokens)
-print("test_vectors from test_tokens", test_vectors.shape)
-
+print("\nSome predictions")
 print('Label for glandless:' + str(dbscan_predict(dbscan, np.array([test_vectors[0]]))[0]))
 print('Label for international:' + str(dbscan_predict(dbscan, np.array([test_vectors[1]]))[0]))
 print('Label for technology:' + str(dbscan_predict(dbscan, np.array([test_vectors[2]]))[0]))
 print('Label for program:' + str(dbscan_predict(dbscan, np.array([test_vectors[3]]))[0]))
 
-print("Ploting DBSCAN Clustering")
 plt.figure(figsize=(10, 10))
 colors = ['purple', 'red', 'blue']
-plt.scatter(test_vectors[:, 0], test_vectors[:, 1], c=dbscan.labels_, cmap=matplotlib.colors.ListedColormap(colors), s=15)
+plt.scatter(word_vectors[:, 0], word_vectors[:, 1], c=dbscan.labels_, cmap=matplotlib.colors.ListedColormap(colors), s=15)
 plt.title('DBSCAN Clustering', fontsize=20)
 plt.xlabel('Feature 1', fontsize=14)
 plt.ylabel('Feature 2', fontsize=14)
