@@ -4,7 +4,8 @@
 ### 1. Build the model 
 `load_data_and_create_LDA.py`
 
-### 2. Run load_model_and_DBSCAN.py
+### 2. Run LDA Topic clustering and DBSCAN
+`load_model_and_DBSCAN.py`
 
 <img src="./doc/dbscan.png" width="60%" height="auto">
 
@@ -62,11 +63,11 @@ Label for technology:-1
 Label for program:-1
 ```
 
+### 2. Run K-Means
+`load_model_and_KNN.py.py`
 
- 
-### Links 
-- [EUR-lex](https://eur-lex.europa.eu/content/welcome/about.html)
+<img src="./doc/kmeans.png" width="60%" height="auto">
 
 
-###
+### Links
 - [Back to bigdata_and_ai](https://github.com/ermalaliraj/bigdata_and_ai) 
