@@ -79,7 +79,7 @@ for text in data_words:
 print("\ncorpus size: ", len(corpus))
 print("corpus[0][0:20]: ", corpus[0][0:20])
 
-outputFile = open('./model/lda_books_model_corpus.dat', 'wb')
+outputFile = open('./model/lda_eu_regulations_model_corpus.dat', 'wb')
 pickle.dump(corpus, outputFile)
 outputFile.close()
 print("Corpus data saved in: ", outputFile.name)

@@ -1,5 +1,5 @@
-Loading  ./model/lda_books_model.dat
-Loading  ./model/lda_books_model_corpus.dat
+Loading  ./model/lda_eu_regulations_model.dat
+Loading  ./model/lda_eu_regulations_model_corpus.dat
 Loaded Regulations model and corpus data.
 
 First 5 topics:

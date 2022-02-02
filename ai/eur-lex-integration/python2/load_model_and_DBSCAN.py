@@ -37,8 +37,8 @@ def tag_to_vector(tokens):
     return word_vectors
 
 
-lda_model = deserializeFile('./model/lda_books_model.dat')
-corpus = deserializeFile('./model/lda_books_model_corpus.dat')
+lda_model = deserializeFile('./model/lda_eu_regulations_model.dat')
+corpus = deserializeFile('./model/lda_eu_regulations_model_corpus.dat')
 print("Loaded Regulations model and corpus data.")
 
 topics = show_topics(lda_model, 5)

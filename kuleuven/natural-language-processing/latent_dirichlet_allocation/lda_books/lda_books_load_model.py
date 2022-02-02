@@ -26,7 +26,7 @@ def show_topics(lda_model, num_words=5):
 
 
 lda_model = deserializeFile('./model/lda_books_model.dat')
-corpus = deserializeFile('./model/lda_books_model_corpus.dat')
+corpus = deserializeFile('./model/lda_eu_regulations_model_corpus.dat')
 print("Loaded model and corpus data. Preparing visualisation... ")
 
 show_topics(lda_model, 5)
