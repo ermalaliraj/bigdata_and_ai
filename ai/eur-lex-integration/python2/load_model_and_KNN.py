@@ -9,7 +9,7 @@ from sklearn.preprocessing import StandardScaler
 
 
 def deserializeFile(file_name):
-    print("\nLoading ", file_name)
+    print("Loading ", file_name)
     with open(file_name, 'rb') as f:
         corpus = pickle.load(f)
     return corpus
@@ -59,10 +59,13 @@ print("word_vectors from tokens", word_vectors.shape)
 print("\nPerform StandardScaler analysis")
 ss = StandardScaler()
 X = ss.fit_transform(word_vectors)
+print("len(X):", len(X))
+print("X:", X)
 km = KMeans(n_clusters=20)
 km.fit(X)
 y_pred = km.predict(X)
-print("y_pred:", y_pred)
+print("leny_pred):", len(y_pred))
+print("y_pred:\n", y_pred)
 
 plt.scatter(X[:, 0], X[:, 1], c=y_pred, cmap='Paired')
 plt.title("K-means")
@@ -76,4 +79,4 @@ for i in test_tokens:
     test_vectors.append(i.vector)
 test_vectors = np.array(test_vectors)
 test_pred = km.predict(test_vectors)
-print("output labels : ", test_pred)
+print("output prediction : ", test_pred)

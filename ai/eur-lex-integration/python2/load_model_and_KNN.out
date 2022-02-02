@@ -1,0 +1,39 @@
+Loading  ./model/lda_eu_regulations_model.dat
+Loading  ./model/lda_eu_regulations_model_corpus.dat
+Loaded Regulations model and corpus data.
+
+Total topics 100. Printing first 5:
+['digital', 'right', 'term', 'long', 'capacity']
+['datum', 'cabinet', 'blast', 'chill', 'celsius']
+['datum', 'personal', 'processing', 'subject', 'authority']
+['dioxide', 'titanium', 'product', 'cosmetic', 'use']
+['accordance', 'animal', 'celsius', 'blast', 'chill']
+
+Checking 100 topics loaded from the model
+Total words in topics  500
+Re-build corpus string concatenating all 1860 words sorted by words.index
+Generated 229 tokens
+word_vectors from tokens (229, 96)
+
+Perform StandardScaler analysis
+len(X): 229
+X: [[-1.633207   -0.39804992 -0.96784824 ...  0.05645043  0.7261634 0.63525385]
+ [-0.47151104 -0.6052581  -1.355656   ...  0.16785078 -0.06476124 1.023144  ]
+ [-0.9008663  -0.02487697 -0.44269702 ... -0.74006134  0.89383125 1.1332729 ]
+ ...
+ [ 1.0558763   1.0600324  -1.1837364  ...  2.277388    0.75779563 0.98434216]
+ [-1.1371458   1.6420493   1.4895096  ... -1.3861774   0.25121495 -0.297696  ]
+ [-0.9261732  -0.30538407  0.8428756  ... -0.26464862 -0.16576432 -2.043704  ]]
+len(y_pred): 229
+y_pred:
+ [ 2  4 13 16 11  1 10 14  9  5 15  6 16  1  1  1 13 16 14 11  1  1  0  1
+  6 11 14 13 16  1 10 14 14  8 10  8  7 11  1  1 14  8 15  9  3 18  3 11
+  1 14 14  1  1 18  3  5 11  2 16 10  1 11  1 13  2 19  1  9 11  6 11 14
+ 16 14  5  2  5  4  4 11 13 12 18  3 15 11 11 11 14 11 11  1  1 14  1  6
+ 13  2 11 14  1  1  1 14  8 11 14 13  2  2  4  1 13 12 13  2 17  4 13  4
+ 10 14  1  7 16 18  7 11 11 13 15  1  1 14  6 11 11 14  7 11  1 10 11 11
+ 10 14 14 13 16  4 14  8 13 17  4 11  6 10  9  7 11  1  9  3  5  4  1 14
+  1  1  1  1  1 14 13  6 11  1  1  1 14  9  3  4 14 13 12 14  9  7  8 16
+ 14 13 16 14 13 15  6 10 11 14 13  2  4 10 13 11 13  6  4 11 10  8  2  4
+ 14 16  1  1 13  2 16 16 14  7 11 14  9]
+output labels :  [16 16  1 14]

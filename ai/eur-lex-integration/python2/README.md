@@ -6,6 +6,7 @@
 
 ### 2. See the Topics distribution using gensimvis
 `load_model_and_showTopicsWithGensimvis.py`
+Download and consult on your own the generated html file `LDA_Regulation_topics.html`
 <img src="./doc/topics_with_gensimvis.JPG" width="90%" height="auto">
 
 ### 2. Run LDA Topic clustering and DBSCAN
