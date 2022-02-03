@@ -8,6 +8,9 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
 
+fileModelName = './model/lda_model_EU_REG_year-16-17-18-19-20-21.dat'
+fileCampusName = './model/lda_model_EU_REG_year-16-17-18-19-20-21_campus.dat'
+
 def deserializeFile(file_name):
     print("Loading ", file_name)
     with open(file_name, 'rb') as f:
@@ -35,8 +38,8 @@ def tag_to_vector(tokens):
     return word_vectors
 
 
-lda_model = deserializeFile('./model/lda_eu_regulations_model.dat')
-corpus = deserializeFile('./model/lda_eu_regulations_model_corpus.dat')
+lda_model = deserializeFile(fileModelName)
+corpus = deserializeFile(fileCampusName)
 print("Loaded Regulations model and corpus data.")
 
 topics = show_topics(lda_model, 5)

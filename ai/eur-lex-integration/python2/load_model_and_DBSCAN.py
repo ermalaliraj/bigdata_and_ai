@@ -2,10 +2,17 @@ import pickle
 
 import matplotlib
 import matplotlib.pyplot as plt
-import numpy as np
 import spacy
 from gensim.parsing.preprocessing import preprocess_string, strip_punctuation, strip_numeric
 from sklearn.cluster import DBSCAN
+
+year = "2016"
+fileModelName = './model/lda_model_EU_REG_year-' + year + '.dat'
+fileCampusName = './model/lda_model_EU_REG_year-' + year + '_campus.dat'
+
+import numpy as np
+
+np.set_printoptions(edgeitems=3, linewidth=100)
 
 
 def deserializeFile(file_name):
@@ -35,8 +42,25 @@ def tag_to_vector(tokens):
     return word_vectors
 
 
-lda_model = deserializeFile('./model/lda_eu_regulations_model.dat')
-corpus = deserializeFile('./model/lda_eu_regulations_model_corpus.dat')
+def plot_listedColorMap(word_vectors, colorSequence):
+    plt.figure(figsize=(10, 10))
+    colors = ['purple', 'red', 'blue']
+    X = word_vectors[:, 0]  # first column
+    Y = word_vectors[:, 1]  # second column
+    colorMap = matplotlib.colors.ListedColormap(colors)
+    print("X: ", X[0:5])
+    print("Y: ", Y[0:5])
+    print("colorSequence: ", colorSequence[0:5])
+    plt.scatter(X, Y, c=colorSequence, cmap=colorMap, s=15)
+    plt.title('DBSCAN Clustering Year' + year, fontsize=20)
+    plt.xlabel('Feature 1', fontsize=14)
+    plt.ylabel('Feature 2', fontsize=14)
+    plt.show()
+    plt.savefig("lda_model_EU_REG_year-{}.png".format(year))
+
+
+lda_model = deserializeFile(fileModelName)
+corpus = deserializeFile(fileCampusName)
 print("Loaded Regulations model and corpus data.")
 
 topics = show_topics(lda_model, 5)
@@ -50,17 +74,23 @@ print("Re-build corpus string concatenating all {} words sorted by words.index".
 
 nlp = spacy.load("en_core_web_sm")
 tokens = nlp(corpus)
-print("Generated {} tokens".format(len(tokens)))
+print("Generated {} tokens form NLP ".format(len(tokens)))
 
 # Convert tags into vectors for our clustering model
 word_vectors = tag_to_vector(tokens)
-print("word_vectors from tokens", word_vectors.shape)
-
-print("\nPerform DBSCAN clustering from vector array or distance matrix. :- ")
-
-# Use cosine because spacy uses cosine. min_samples = 2 because a cluster should have atleast 2 similar words
+print("word_vectors from tokens {}. Building DBSCAN with data: \n{}".format(word_vectors.shape, word_vectors))
+# Use cosine because spacy uses cosine. min_samples = 2 because a cluster should have at least 2 similar words
 dbscan = DBSCAN(metric='cosine', eps=0.3, min_samples=5).fit(word_vectors)
-print("DBSCAN labels with the word_vectors: \n", dbscan.labels_)
+print("DBSCAN labels {} data: \n{}".format(dbscan.labels_.shape, dbscan.labels_))
+colorSequence = dbscan.labels_
+plot_listedColorMap(word_vectors, colorSequence)
+
+# Test the model
+test_words = ' '.join(['glandless', 'international', 'technology', 'program']).replace('-', ' ')
+test_tokens = nlp(test_words)
+test_vectors = tag_to_vector(test_tokens)
+print("test_tokens generated from nlp(): ", test_tokens)
+print("test_vectors from test_tokens[4x9] instead of 229x96\n", test_vectors[0:4, 0:5])
 
 
 def dbscan_predict(model, X):
@@ -75,22 +105,8 @@ def dbscan_predict(model, X):
     return y_new
 
 
-test_words = ' '.join(['glandless', 'international', 'technology', 'program']).replace('-', ' ')
-test_tokens = nlp(test_words)
-test_vectors = tag_to_vector(test_tokens)
-print("\ntest_tokens: ", test_tokens)
-print("test_vectors from test_tokens[4x9] instead of 229x96\n", test_vectors[0:4, 0:5])
-
 print("\nSome predictions")
 print('Label for glandless:' + str(dbscan_predict(dbscan, np.array([test_vectors[0]]))[0]))
 print('Label for international:' + str(dbscan_predict(dbscan, np.array([test_vectors[1]]))[0]))
 print('Label for technology:' + str(dbscan_predict(dbscan, np.array([test_vectors[2]]))[0]))
 print('Label for program:' + str(dbscan_predict(dbscan, np.array([test_vectors[3]]))[0]))
-
-plt.figure(figsize=(10, 10))
-colors = ['purple', 'red', 'blue']
-plt.scatter(word_vectors[:, 0], word_vectors[:, 1], c=dbscan.labels_, cmap=matplotlib.colors.ListedColormap(colors), s=15)
-plt.title('DBSCAN Clustering', fontsize=20)
-plt.xlabel('Feature 1', fontsize=14)
-plt.ylabel('Feature 2', fontsize=14)
-plt.show()
