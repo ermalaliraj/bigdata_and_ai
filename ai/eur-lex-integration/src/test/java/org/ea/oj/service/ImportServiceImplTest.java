@@ -65,7 +65,7 @@ public class ImportServiceImplTest extends AbstractSpringTest {
     @Test
     public void test_getAllActsForYear_akomaNtosoFormat() {
         String type = "reg";
-        int year = 2016;
+        int year = 2019;
         importServiceImpl.getAknActsForYear(type, year);
     }
 
