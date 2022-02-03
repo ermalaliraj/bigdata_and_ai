@@ -3,15 +3,18 @@ import pickle
 import pyLDAvis
 import pyLDAvis.gensim_models as gensimvis
 
-fileModelName = './model/lda_model_EU_REG_year-16-17-18-19-20-21.dat'
-fileCampusName = './model/lda_model_EU_REG_year-16-17-18-19-20-21_campus.dat'
-outputFile = 'LDA_EU_REG_year-16-17-18-19-20-21_topics.html'
+year = "2020"
+fileModelName = './model/lda_model_EU_REG_year-' + year + '.dat'
+fileCampusName = './model/lda_model_EU_REG_year-' + year + '_campus.dat'
+outputFile = 'LDA_EU_REG_year-' + year + '_topics.html'
+
 
 def deserializeFile(file_name):
     print("\nLoading ", file_name)
     with open(file_name, 'rb') as f:
         corpus = pickle.load(f)
     return corpus
+
 
 lda_model = deserializeFile(fileModelName)
 corpus = deserializeFile(fileCampusName)

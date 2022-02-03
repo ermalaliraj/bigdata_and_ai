@@ -6,7 +6,7 @@ import spacy
 from gensim.parsing.preprocessing import preprocess_string, strip_punctuation, strip_numeric
 from sklearn.cluster import DBSCAN
 
-year = "2016"
+year = "2017"
 fileModelName = './model/lda_model_EU_REG_year-' + year + '.dat'
 fileCampusName = './model/lda_model_EU_REG_year-' + year + '_campus.dat'
 
@@ -56,7 +56,7 @@ def plot_listedColorMap(word_vectors, colorSequence):
     plt.xlabel('Feature 1', fontsize=14)
     plt.ylabel('Feature 2', fontsize=14)
     plt.show()
-    plt.savefig("lda_model_EU_REG_year-{}.png".format(year))
+    plt.savefig("LDA_EU_REG_year-{}_DBSCAN.png".format(year))
 
 
 lda_model = deserializeFile(fileModelName)

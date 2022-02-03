@@ -8,8 +8,9 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
 
-fileModelName = './model/lda_model_EU_REG_year-16-17-18-19-20-21.dat'
-fileCampusName = './model/lda_model_EU_REG_year-16-17-18-19-20-21_campus.dat'
+year = "2017"
+fileModelName = './model/lda_model_EU_REG_year-' + year + '.dat'
+fileCampusName = './model/lda_model_EU_REG_year-' + year + '_campus.dat'
 
 def deserializeFile(file_name):
     print("Loading ", file_name)
@@ -71,7 +72,7 @@ print("leny_pred):", len(y_pred))
 print("y_pred:\n", y_pred)
 
 plt.scatter(X[:, 0], X[:, 1], c=y_pred, cmap='Paired')
-plt.title("K-means")
+plt.title("K-means year " + year)
 plt.show()
 
 test_words = ' '.join(['glandless', 'international', 'technology', 'program']).replace('-', ' ')

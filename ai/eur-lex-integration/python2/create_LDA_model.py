@@ -8,7 +8,7 @@ import gensim.corpora as corpora
 import spacy
 
 data_dir = "../output/oj"
-year = "2016"
+year = "2020"
 fileModelName = './model/lda_model_EU_REG_year-' + year + '.dat'
 fileCampusName = './model/lda_model_EU_REG_year-' + year + '_campus.dat'
 
