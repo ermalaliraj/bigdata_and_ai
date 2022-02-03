@@ -8,7 +8,7 @@ import gensim.corpora as corpora
 import spacy
 
 data_dir = "../output/oj"
-year = "2020"
+year = "2016-17-18-19-20-21"
 fileModelName = './model/lda_model_EU_REG_year-' + year + '.dat'
 fileCampusName = './model/lda_model_EU_REG_year-' + year + '_campus.dat'
 
@@ -49,7 +49,8 @@ def gen_words(texts):
 
 docs = []
 for filename in os.listdir(data_dir):
-    if filename.startswith("reg_" + year) and filename.endswith(".xml"):
+    # if filename.startswith("reg_" + year) and filename.endswith(".xml"):
+    if filename.endswith(".xml"):
         try:
             docs.append(get_doc_data(os.path.join(data_dir, filename)))
         except:
