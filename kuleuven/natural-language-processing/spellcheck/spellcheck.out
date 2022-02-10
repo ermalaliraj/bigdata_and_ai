@@ -1,0 +1,12 @@
+words[:100]:  ['</s>', 'in', 'for', 'that', 'is', 'on', '##', 'The', 'with', 'said', 'was', 'the', 'at', 'not', 'as', 'it', 'be', 'from', 'by', 'are', 'I', 'have', 'he', 'will', 'has', '####', 'his', 'an', 'this', 'or', 'their', 'who', 'they', 'but', '$', 'had', 'year', 'were', 'we', 'more', '###', 'up', 'been', 'you', 'its', 'one', 'about', 'would', 'which', 'out', 'can', 'It', 'all', 'also', 'two', 'after', 'first', 'He', 'do', 'time', 'than', 'when', 'We', 'over', 'last', 'new', 'other', 'her', 'people', 'into', 'In', 'our', 'there', 'A', 'she', 'could', 'just', 'years', 'some', 'U.S.', 'three', 'million', 'them', 'what', 'But', 'so', 'no', 'like', 'if', 'only', 'percent', 'get', 'did', 'him', 'game', 'back', 'because', 'now', '#.#', 'before']
+dict(list(word_rank.items())[:5])  {'</s>': 0, 'in': 1, 'for': 2, 'that': 3, 'is': 4}
+
+"Cle3n" is transformed to " Clean "
+"qalty" is transformed to " quality "
+
+NOTE: missing spaces are not corrected and might generate errors of spell correction:
+"thetable" is transformed to " timetable "
+
+NOTE: empty strings generate a single letter word surraunded by spaces:
+"" is transformed to " s "
+IT WILL BE USED TO MARKE END OF A SENTENCE
