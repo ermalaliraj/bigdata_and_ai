@@ -7,10 +7,14 @@ You can use “2_step…” notebook I’ve shared with you as a reference.
 - Clean and standardize each text: 
     - Delete stop-words
     - Lemmatize
-    - Select only meaningful lemmas (based on POS distribution) most likely nouns, proper nouns, verbs, and adjectives (keep the order of words in each sentence during transformation for future use)
-    - Select unigrams (lemmas) and bi-grams (2 neighboring lemmas) from each sentence (Note: need to extract bigrams ONLY from a sentence, otherwise there will be erroneous bi-grams that happened to be one from one sentence and another from another sentence – this creates noise for the LDA model and reduces its accuracy)
+    - Select only meaningful lemmas (based on POS distribution) most likely nouns, proper nouns, verbs, and adjectives 
+    (keep the order of words in each sentence during transformation for future use)
+    - Select unigrams (lemmas) and bi-grams (2 neighboring lemmas) from each sentence (Note: need to extract bigrams ONLY from a sentence, 
+    otherwise there will be erroneous bi-grams that happened to be one from one sentence and another from another sentence – 
+    this creates noise for the LDA model and reduces its accuracy)
     - Lower case every extracted unigram and bigram – just in case
-    - Reduce the dimensionality of dictionary for topic modeling lemmas and bigrams (calculate lemma/bigram frequency in the texts for LDA, delete very infrequent and very frequent – you can use your choice of lower and upper-frequency boundaries, I like to use 1st and 99th percentiles)
+    - Reduce the dimensionality of dictionary for topic modeling lemmas and bigrams (calculate lemma/bigram frequency in the texts for LDA,
+     delete very infrequent and very frequent – you can use your choice of lower and upper-frequency boundaries, I like to use 1st and 99th percentiles)
 2) Before training LDA model, you need to estimate the number of topics in a corpus (through topic coherence). - You can use “3_step…” notebooks for reference
 3) Create a document-term matrix for the LDA model using selected lemmas and bigrams in step (1)
 - Train the LDA model with corpus from (3) and a selected number of topics from (2)
