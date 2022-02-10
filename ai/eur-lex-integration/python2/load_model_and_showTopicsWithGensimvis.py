@@ -3,7 +3,7 @@ import pickle
 import pyLDAvis
 import pyLDAvis.gensim_models as gensimvis
 
-year = "2016-17-18-19-20-21"
+year = "2019"
 fileModelName = './model/lda_model_EU_REG_year-' + year + '.dat'
 fileCampusName = './model/lda_model_EU_REG_year-' + year + '_campus.dat'
 outputFile = 'LDA_EU_REG_year-' + year + '_topics.html'

@@ -60,6 +60,7 @@ public class OJDocumentProviderImpl implements OJDocumentProvider {
         Query query = SPARQLQueryCatalog.getAllActsForYear(type, year);
         String jsonOJResponse = callOJ(query);
         List<ActOJDto> urlActs = buildActDto(jsonOJResponse);
+        LOG.info("Found {} documents in OJ. Start fetching one by one..", urlActs.size());
         for (int i = 0; i < urlActs.size(); i++) {
             ActOJDto actOJDto = urlActs.get(i);
             String url = actOJDto.getUrlActFormex();

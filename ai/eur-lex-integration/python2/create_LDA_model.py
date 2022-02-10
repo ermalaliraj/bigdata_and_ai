@@ -8,7 +8,7 @@ import gensim.corpora as corpora
 import spacy
 
 data_dir = "../output/oj"
-year = "2016-17-18-19-20-21"
+year = "2019"
 fileModelName = './model/lda_model_EU_REG_year-' + year + '.dat'
 fileCampusName = './model/lda_model_EU_REG_year-' + year + '_campus.dat'
 
@@ -50,7 +50,8 @@ def gen_words(texts):
 docs = []
 for filename in os.listdir(data_dir):
     # if filename.startswith("reg_" + year) and filename.endswith(".xml"):
-    if filename.endswith(".xml"):
+    # if filename.endswith(".xml"):
+    if filename.startswith("reg_" + year) and filename.endswith(".xml"):
         try:
             docs.append(get_doc_data(os.path.join(data_dir, filename)))
         except:
@@ -90,7 +91,7 @@ print("Corpus data saved in: ", outputFile.name)
 
 lda_model = gensim.models.ldamodel.LdaModel(corpus=corpus,
                                             id2word=id2word,
-                                            num_topics=100,
+                                            num_topics=10,  #
                                             random_state=100,
                                             update_every=1,
                                             chunksize=100,
