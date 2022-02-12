@@ -44,6 +44,7 @@ The probability we get the same article is very low, but we choose the closest t
 
 ### 
 <img src="./doc/lda_generation_map.JPG" width="80%" height="auto">
+<img src="./doc/lda.JPG" width="80%" height="auto">
 
 
 
