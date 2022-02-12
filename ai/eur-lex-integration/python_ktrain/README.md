@@ -6,7 +6,7 @@ To run the repository follow the steps:
 
 1. Clone the repository:
 
-      git clone https://github.com/AdityaSadana/Topic-Modeling-using-LDA
+      git clone https://github.com/........
       
 2. Install Requirements:
 
