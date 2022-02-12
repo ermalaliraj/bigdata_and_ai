@@ -30,10 +30,7 @@ tm.visualize_documents(doc_topics=tm.get_doctopics(), filepath="visualization.ht
 doc_topics = tm.get_doctopics(topic_ids=[31, 55])
 tm.visualize_documents(doc_topics=doc_topics, filepath="visualization_topic_31_55.html")
 
-news = news = """Prime Minister Naftali Bennett called on Israeli citizens in Ukraine to leave the country immediately, following a second meeting held with top security and diplomatic 
-                officials on Saturday due to the growing fears of an imminent Russian invasion.
-                There were around 4,500 Israelis registered with the Israeli embassy in Ukraine, the Foreign Ministry told the Times of Israel. 
-                The ministry estimated that there are between 10,000-15,000 Israelis in the country. The Foreign Ministry also further raised its travel warnings to the area"""
+news = news = """elon mask has come with an idea to explore the space and universe"""
 
 pred = tm.predict([news])
 
