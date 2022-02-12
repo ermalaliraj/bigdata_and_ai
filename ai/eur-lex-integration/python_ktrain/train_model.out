@@ -1,0 +1,30 @@
+Building the model based on 217 regulations
+
+SAVED in  ./model/lda_model_EU_REG_year-2021.pkl
+SAVED in  ./model/lda_model_EU_REG_year-2021_topics.pkl
+
+All Topics (topicId | nrOfDocumentsTalkingAboutThisTopic | distributionOfWordsForTheTopic):
+topic:9 | count:58 | product food substance mrls maximum animal residue existing efsa risk
+topic:8 | count:49 | financial support action programme fund objective implementation plan development cap
+topic:4 | count:43 | fishing vessel stock fishery opportunity quota water fish catch sea
+topic:5 | count:23 | person entity body legal natural child financial sexual abuse june
+topic:0 | count:19 | service provider payment certificate competent content institution covid-19 hosting authorisation
+topic:1 | count:9 | programme agency management support security asylum financial right board country
+topic:2 | count:7 | joint undertaking programme europe board health research financial contribution technology
+topic:3 | count:4 | visa central person access vis security image applicant residence processing
+topic:7 | count:3 | etias central benchmark unit travel verification authorisation alert schengen automated
+topic:6 | count:2 | railway undertaking passenger person service rail body mobility manager transport
+
+SAVED in  ./model/lda_model_EU_REG_year-2021_topic_to_document.pkl
+
+Total topics:  10  List (5) of Documents for each Topic:
+Topic 0 - Documents list: ['reg_2021_nr-011_seq-0002_akn.xml', 'reg_2021_nr-058_seq-0001_akn.xml', 'reg_2021_nr-068_seq-0005_akn.xml', 'reg_2021_nr-073_seq-0001_akn.xml', 'reg_2021_nr-073_seq-0002_akn.xml']
+Topic 5 - Documents list: ['reg_2021_nr-023_seq-0001_akn.xml', 'reg_2021_nr-058_seq-0002_akn.xml', 'reg_2021_nr-060_seq-0001_akn.xml', 'reg_2021_nr-087_seq-0002_akn.xml', 'reg_2021_nr-099_seq-0002_akn.xml']
+Topic 4 - Documents list: ['reg_2021_nr-024_seq-0001_akn.xml', 'reg_2021_nr-027_seq-0002_akn.xml', 'reg_2021_nr-027_seq-0003_akn.xml', 'reg_2021_nr-031_seq-0001_akn.xml', 'reg_2021_nr-031_seq-0002_akn.xml']
+Topic 9 - Documents list: ['reg_2021_nr-024_seq-0002_akn.xml', 'reg_2021_nr-029_seq-0001_akn.xml', 'reg_2021_nr-046_seq-0004_akn.xml', 'reg_2021_nr-074_seq-0002_akn.xml', 'reg_2021_nr-074_seq-0003_akn.xml']
+Topic 8 - Documents list: ['reg_2021_nr-034_seq-0002_akn.xml', 'reg_2021_nr-034_seq-0003_akn.xml', 'reg_2021_nr-053_seq-0001_akn.xml', 'reg_2021_nr-057_seq-0001_akn.xml', 'reg_2021_nr-057_seq-0002_akn.xml']
+Topic 1 - Documents list: ['reg_2021_nr-049_seq-0001_akn.xml', 'reg_2021_nr-156_seq-0001_akn.xml', 'reg_2021_nr-156_seq-0002_akn.xml', 'reg_2021_nr-170_seq-0002_akn.xml', 'reg_2021_nr-189_seq-0001_akn.xml']
+Topic 7 - Documents list: ['reg_2021_nr-049_seq-0002_akn.xml', 'reg_2021_nr-249_seq-0001_akn.xml', 'reg_2021_nr-249_seq-0003_akn.xml']
+Topic 3 - Documents list: ['reg_2021_nr-068_seq-0001_akn.xml', 'reg_2021_nr-248_seq-0001_akn.xml', 'reg_2021_nr-248_seq-0002_akn.xml', 'reg_2021_nr-249_seq-0002_akn.xml']
+Topic 6 - Documents list: ['reg_2021_nr-139_seq-0001_akn.xml', 'reg_2021_nr-172_seq-0001_akn.xml']
+Topic 2 - Documents list: ['reg_2021_nr-166_seq-0001_akn.xml', 'reg_2021_nr-189_seq-0003_akn.xml', 'reg_2021_nr-202_seq-0001_akn.xml', 'reg_2021_nr-256_seq-0002_akn.xml', 'reg_2021_nr-387_seq-0006_akn.xml']
