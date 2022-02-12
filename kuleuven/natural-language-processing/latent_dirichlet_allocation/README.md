@@ -52,20 +52,28 @@ Than you can look inside the topic instead of the document because the looking i
 
 <img src="./doc/lda.JPG" width="80%" height="auto">
 
+### What is Latent Dirichlet Allocation 
+- In Natural language processing the `Latent Dirichlet Allocation (LDA)` is a generative statistical model that allows 
+sets of observers to be explained by unobserved groups that explain why some parts pf the data are similar.
+- The aim of LDA is to find topics a document belongs to, based on the words in it.
 
-
-```  
-pip install --user pyldavis
-pip install --user spacy
-python -m spacy download en   # now you can spacy.load('en_core_web_sm')
 ```
+"Dogs like to chew on bones and fetch sticks"
+"Puppies drink milk."
+"Both like to bark."
+```
+
+We can easily say it belongs to a topic __DOG_related__ because it contains words such as Dogs, bones, puppies and bark.
+
+<img src="./doc/lda2.JPG" width="80%" height="auto">
 
 ### Links 
 - [Video Tutorial](https://www.youtube.com/watch?v=T05t-SqKArY&t=822s)
 - [LDA news headlines by Susan Li](https://towardsdatascience.com/topic-modeling-and-latent-dirichlet-allocation-in-python-9bf156893c24)
 - [LDA news headlines github](https://github.com/susanli2016/NLP-with-Python/blob/master/LDA_news_headlines.ipynb)
 - [Introduction to LDA](http://blog.echen.me/2011/08/22/introduction-to-latent-dirichlet-allocation/)
-https://www.youtube.com/watch?v=1_jq_gWFUuQ
+- [Video Tutorial 3](https://www.youtube.com/watch?v=1_jq_gWFUuQ)
+- [Video Tutorial -  LDA for Document Clustering | KGPTalkie](https://www.youtube.com/watch?v=pZgYRYUc6Mc)
 
 
 ###
