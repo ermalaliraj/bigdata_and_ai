@@ -44,6 +44,12 @@ The probability we get the same article is very low, but we choose the closest t
 
 ### 
 <img src="./doc/lda_generation_map.JPG" width="80%" height="auto">
+
+### When to use?
+Document or information extraction.
+When you have billions of documents, instead of scanning all documents, you can create related topics for each of the document.
+Than you can look inside the topic instead of the document because the looking inside the topic is much faster than looking inside the whole document.
+
 <img src="./doc/lda.JPG" width="80%" height="auto">
 
 
