@@ -3,6 +3,7 @@ import pickle
 import numpy as np
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
+import matplotlib.pyplot as plt
 
 
 def clean(text):
@@ -18,7 +19,7 @@ def clean(text):
 
 
 path = "../output/oj"
-year = "2021"
+year = "2016"
 fileModelName = './model/lda_model_EU_REG_year-' + year + '.pkl'
 fileTopicsName = './model/lda_model_EU_REG_year-' + year + '_topics.pkl'
 fileTopicToDocumentName = './model/lda_model_EU_REG_year-' + year + '_topic_to_document.pkl'
@@ -27,6 +28,7 @@ print("Loading Model and Metadata...")
 model = pickle.load(open(fileModelName, "rb"))
 topics = pickle.load(open(fileTopicsName, "rb"))
 topic_to_document = pickle.load(open(fileTopicToDocumentName, "rb"))
+
 
 text = input("Enter text: ")
 

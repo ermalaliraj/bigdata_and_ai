@@ -46,15 +46,16 @@ def save_content_to_file(content, filePath):
 
 
 path = "../output/oj"
-year = "2016-2022"
+year = "2016"
 fileModelName = './model/lda_model_EU_REG_year-' + year + '.pkl'
 fileTopicsName = './model/lda_model_EU_REG_year-' + year + '_topics.pkl'
 fileTopicToDocumentName = './model/lda_model_EU_REG_year-' + year + '_topic_to_document.pkl'
+fileVisualization = './model/lda_model_EU_REG_year-' + year + '_topics_visualisation.html'
 
 documents = []
 for doc in os.listdir(path):
     if doc.endswith(".xml"):
-    # if doc.startswith("reg_" + year) and doc.endswith(".xml"):
+        # if doc.startswith("reg_" + year) and doc.endswith(".xml"):
         try:
             documents.append([doc, clean(get_doc_data(os.path.join(path, doc)))])
         except:
@@ -63,9 +64,10 @@ for doc in os.listdir(path):
 documents = np.array(documents)
 print("Building the model based on {} regulations".format(len(documents)))
 
-model = ktrain.text.get_topic_model(documents[:, 1])
+model = ktrain.text.get_topic_model(documents[:, 1], n_topics=None, n_features=10000)
 model.build(documents[:, 1], threshold=0.25)
 topics = model.get_topics()
+print("Total topics: ", len(topics))
 
 save_content_to_file(model, fileModelName)
 save_content_to_file(topics, fileTopicsName)
@@ -79,6 +81,9 @@ for i in documents:
     topic_to_document[np.argmax(pred)].append(i[0])
 save_content_to_file(topic_to_document, fileTopicToDocumentName)
 
-print("\nTotal topics: ", len(topic_to_document), " List (5) of Documents for each Topic: ")
+print("\nList of Documents for each Topic: (5)")
 for key, value in topic_to_document.items():
     print("Topic {} - Documents list: {}".format(key, value[:5]))
+
+print("\nSaving visualization file to :", fileVisualization)
+model.visualize_documents(doc_topics=model.get_doctopics(), filepath=fileVisualization)
