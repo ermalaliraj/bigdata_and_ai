@@ -1,6 +1,7 @@
 # Exclude the following directories for Languages statistics
 
 ai/eur-lex-integration/doc/* linguist-vendored
+ai/eur-lex-integration/output/* linguist-vendored
 ai/eur-lex-integration/python2/doc/* linguist-vendored
 ai/eur-lex-integration/python2/output/* linguist-vendored
 ai/eur-lex-integration/python2/model/* linguist-vendored
