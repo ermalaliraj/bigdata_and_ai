@@ -8,3 +8,4 @@ ai/eur-lex-integration/python_ktrain/model/* linguist-vendored
 ai/eur-lex-integration/python_ktrain/model/* linguist-vendored
 geneve/* linguist-vendored
 kuleuven/natural-language-processing/latent_dirichlet_allocation/lda_books/model/* linguist-vendored
+kuleuven/natural-language-processing/latent_dirichlet_allocation/lda_news_ktrain/model/* linguist-vendored
