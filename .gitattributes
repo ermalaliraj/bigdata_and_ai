@@ -2,7 +2,9 @@
 
 ai/eur-lex-integration/doc/* linguist-vendored
 ai/eur-lex-integration/python2/doc/* linguist-vendored
+ai/eur-lex-integration/python2/output/* linguist-vendored
 ai/eur-lex-integration/python2/model/* linguist-vendored
 ai/eur-lex-integration/python_ktrain/model/* linguist-vendored
-model/* linguist-vendored
-out/* linguist-vendored
+ai/eur-lex-integration/python_ktrain/model/* linguist-vendored
+geneve/* linguist-vendored
+natural-language-processing/latent_dirichlet_allocation/lda_books/model/* linguist-vendored
