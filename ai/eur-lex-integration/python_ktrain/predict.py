@@ -4,7 +4,7 @@ import numpy as np
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
-data_dir = "../data"
+data_dir = "../output/oj"
 year = "2016"
 fileModel = './model/ktrain_model_EU_REG_year-' + year + '.pkl'
 fileTopics = './model/ktrain_model_EU_REG_year-' + year + '_topics.pkl'
@@ -47,6 +47,3 @@ while True:
         if pred[ind] >= 0.25:  # 0.25 is threshold value for similarity.
             print("Topic ->", topics[ind])
             print("Similar Documents ->", topic_to_document[ind])
-        # else:
-        #     print("No matching found! Best probability of {} was for topic: ".format(pred[ind], topics[ind]))
-        #     print("Similar Documents:", topic_to_document[ind])
