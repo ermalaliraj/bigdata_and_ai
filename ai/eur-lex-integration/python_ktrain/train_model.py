@@ -1,89 +1,52 @@
-import os
 import pickle
-import re
-import xml.etree.ElementTree as ET
-from collections import defaultdict
 
-import ktrain
-import nltk
 import numpy as np
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
-nltk.download('stopwords')
-nltk.download('wordnet')
+data_dir = "../data"
+year = "2016"
+fileModel = './model/ktrain_model_EU_REG_year-' + year + '.pkl'
+fileTopics = './model/ktrain_model_EU_REG_year-' + year + '_topics.pkl'
+fileTopicsToDocs = './model/ktrain_model_EU_REG_year-' + year + '_topics_to_docs.pkl'
 
 
-def to_string_utf8(document):
-    return document.decode('utf-8')
-
-
-def get_doc_data(filepath):
-    tree = ET.parse(filepath)
-    document = ET.tostring(tree.getroot(), encoding='utf-8', method='text')
-    document = to_string_utf8(document)
-    document = re.sub('[ \t\n]+', ' ', document)
-    return document
-
-
-def clean(text):
+# Cleaning Text
+def lemmatization(text):
     lemmatizer = WordNetLemmatizer()
     stopwordList = set(stopwords.words("english"))
     words = text.lower().split(" ")
     cleaned_text = ""
     for word in words:
-        if word in stopwordList:
-            continue
+        if word in stopwordList: continue
         cleaned_text += lemmatizer.lemmatize(word) + " "
-
     return cleaned_text
 
 
-def save_content_to_file(content, filePath):
-    file = open(filePath, "wb")
-    pickle.dump(content, file)
-    print("SAVED in ", filePath)
+print("Loading Model and Topics...")
+model = pickle.load(open(fileModel, "rb"))
+topic_to_document = pickle.load(open(fileTopicsToDocs, "rb"))
+topics = pickle.load(open(fileTopics, "rb"))
 
-
-path = "../output/oj"
-year = "2016"
-fileModelName = './model/lda_model_EU_REG_year-' + year + '.pkl'
-fileTopicsName = './model/lda_model_EU_REG_year-' + year + '_topics.pkl'
-fileTopicToDocumentName = './model/lda_model_EU_REG_year-' + year + '_topic_to_document.pkl'
-fileVisualization = './model/lda_model_EU_REG_year-' + year + '_topics_visualisation.html'
-
-documents = []
-for doc in os.listdir(path):
-    if doc.endswith(".xml"):
-        # if doc.startswith("reg_" + year) and doc.endswith(".xml"):
-        try:
-            documents.append([doc, clean(get_doc_data(os.path.join(path, doc)))])
-        except:
-            pass
-
-documents = np.array(documents)
-print("Building the model based on {} regulations".format(len(documents)))
-
-model = ktrain.text.get_topic_model(documents[:, 1], n_topics=None, n_features=10000)
-model.build(documents[:, 1], threshold=0.25)
-topics = model.get_topics()
-print("Total topics: ", len(topics))
-
-save_content_to_file(model, fileModelName)
-save_content_to_file(topics, fileTopicsName)
-
-print("\nAll Topics (topicId | nrOfDocumentsTalkingAboutThisTopic | distributionOfWordsForTheTopic): ")
 model.print_topics(show_counts=True)
 
-topic_to_document = defaultdict(list)
-for i in documents:
-    pred = model.predict([i[1]])
-    topic_to_document[np.argmax(pred)].append(i[0])
-save_content_to_file(topic_to_document, fileTopicToDocumentName)
+print("\ndocuments are spread as follow:")
+for topic_doc in range(len(topic_to_document)):
+    print("Topic", topic_doc, "is found in", len(topic_to_document[topic_doc]), "documents")
 
-print("\nList of Documents for each Topic: (5)")
-for key, value in topic_to_document.items():
-    print("Topic {} - Documents list: {}".format(key, value[:5]))
+# Generating Predictions
+while True:
+    text = input("\nEnter text: ")
 
-print("\nSaving visualization file to :", fileVisualization)
-model.visualize_documents(doc_topics=model.get_doctopics(), filepath=fileVisualization)
+    if text == 'exit':
+        print("Good bye.")
+        break
+
+    pred = np.array(model.predict([lemmatization(text)])[0])
+    for ind in range(len(pred)):
+        if pred[ind] >= 0.25:  # 0.25 is threshold value for similarity.
+            print("Topic ->", topics[ind])
+            print("Similar Documents ->", topic_to_document[ind])
+        # else:
+        #     print("No matching found! Best probability of {} was for topic: ".format(pred[ind], topics[ind]))
+        #     print("Similar Documents:", topic_to_document[ind])

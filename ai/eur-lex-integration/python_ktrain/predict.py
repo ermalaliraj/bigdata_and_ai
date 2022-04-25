@@ -3,10 +3,16 @@ import pickle
 import numpy as np
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
-import matplotlib.pyplot as plt
+
+data_dir = "../data"
+year = "2016"
+fileModel = './model/ktrain_model_EU_REG_year-' + year + '.pkl'
+fileTopics = './model/ktrain_model_EU_REG_year-' + year + '_topics.pkl'
+fileTopicsToDocs = './model/ktrain_model_EU_REG_year-' + year + '_topics_to_docs.pkl'
 
 
-def clean(text):
+# Cleaning Text
+def lemmatization(text):
     lemmatizer = WordNetLemmatizer()
     stopwordList = set(stopwords.words("english"))
     words = text.lower().split(" ")
@@ -14,24 +20,33 @@ def clean(text):
     for word in words:
         if word in stopwordList: continue
         cleaned_text += lemmatizer.lemmatize(word) + " "
-
     return cleaned_text
 
 
-path = "../output/oj"
-year = "2016"
-fileModelName = './model/lda_model_EU_REG_year-' + year + '.pkl'
-fileTopicsName = './model/lda_model_EU_REG_year-' + year + '_topics.pkl'
-fileTopicToDocumentName = './model/lda_model_EU_REG_year-' + year + '_topic_to_document.pkl'
+print("Loading Model and Topics...")
+model = pickle.load(open(fileModel, "rb"))
+topic_to_document = pickle.load(open(fileTopicsToDocs, "rb"))
+topics = pickle.load(open(fileTopics, "rb"))
 
-print("Loading Model and Metadata...")
-model = pickle.load(open(fileModelName, "rb"))
-topics = pickle.load(open(fileTopicsName, "rb"))
-topic_to_document = pickle.load(open(fileTopicToDocumentName, "rb"))
+model.print_topics(show_counts=True)
 
+print("\ndocuments are spread as follow:")
+for topic_doc in range(len(topic_to_document)):
+    print("Topic", topic_doc, "is found in", len(topic_to_document[topic_doc]), "documents")
 
-text = input("Enter text: ")
+# Generating Predictions
+while True:
+    text = input("\nEnter text: ")
 
-pred = np.argmax(model.predict([clean(text)]))
-print("Topic ->", topics[pred])
-print("Similar Documents ->", topic_to_document[pred])
+    if text == 'exit':
+        print("Good bye.")
+        break
+
+    pred = np.array(model.predict([lemmatization(text)])[0])
+    for ind in range(len(pred)):
+        if pred[ind] >= 0.25:  # 0.25 is threshold value for similarity.
+            print("Topic ->", topics[ind])
+            print("Similar Documents ->", topic_to_document[ind])
+        # else:
+        #     print("No matching found! Best probability of {} was for topic: ".format(pred[ind], topics[ind]))
+        #     print("Similar Documents:", topic_to_document[ind])
